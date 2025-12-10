@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* Global base styles */
+:root {
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Soft layered background that works in light and dark themes */
+  background-image:
+    radial-gradient(1200px 800px at 80% -200px, rgba(34,211,238,0.18), transparent 60%),
+    radial-gradient(900px 600px at -10% 20%, rgba(56,189,248,0.12), transparent 55%),
+    linear-gradient(#ffffff, #fbfdff);
+  @apply bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image:
+      radial-gradient(1000px 700px at 85% -200px, rgba(34,211,238,0.15), transparent 60%),
+      radial-gradient(800px 500px at -10% 20%, rgba(56,189,248,0.10), transparent 55%),
+      linear-gradient(#0b1220, #0b1324);
+  }
+}
+
+/* Opening animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
