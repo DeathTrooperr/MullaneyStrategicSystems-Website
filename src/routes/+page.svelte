@@ -14,6 +14,7 @@
     vendor: string;
     desc: string;
     color: string; // tailwind color name for accents
+    tags: string[]; // categorization pills e.g., Identity, Cloud, Endpoints, Network
   };
 
   type ColorStyle = {
@@ -134,128 +135,153 @@
 
   const stackItems: StackItem[] = [
       {
-          title: 'IAM',
+          title: 'Identity Access Management',
           vendor: 'Cisco Duo',
           desc: 'Cisco Duo delivers enterprise-grade identity and access management by acting as a centralized cloud-based identity store through Duo Directory and enforcing strong access controls at the application layer. Duo Directory consolidates and manages user identities without requiring traditional directory infrastructure, while Duo applies multi-factor authentication, device trust checks, and adaptive access policies. Together, they ensure that only verified users on secure, compliant devices can access business applications, significantly reducing credential-based attacks within SMB and financial environments.',
-          color: 'cyan'
+          color: 'cyan',
+          tags: ['Identity']
       },
       {
-          title: 'PAM',
+          title: 'Privileged Access Management',
           vendor: 'Evo Security',
           desc: 'Evo Security provides centralized privileged access management that controls, monitors, and restricts administrative permissions. Evo enforces least-privilege access and records sensitive admin actions, reducing the risk of unauthorized system changes or credential compromise in environments handling financial and client data.',
-          color: 'amber'
+          color: 'amber',
+          tags: ['Identity']
       },
       {
           title: 'Password Management',
           vendor: '1Password',
           desc: '1Password offers secure, encrypted vaults for storing organizational credentials, documents, and shared secrets. 1Password strengthens password hygiene, eliminates unsafe sharing practices, and provides breach monitoring to protect against credential theft—the most common cause of unauthorized access.',
-          color: 'emerald'
+          color: 'emerald',
+          tags: ['Identity']
       },
       {
-          title: 'Email Security',
+          title: 'Enhanced Email Security',
           vendor: 'Avanan',
           desc: 'Avanan delivers advanced cloud-native email security using API-level analysis to detect phishing, malware, spoofing, and Business Email Compromise. Avanan protects Microsoft 365 and Google Workspace from sophisticated threats by identifying malicious activity inside the inbox where traditional gateways cannot see.',
-          color: 'violet'
+          color: 'violet',
+          tags: ['Cloud']
       },
       {
           title: 'DMARC / SPF / DKIM',
           vendor: 'Avanan',
           desc: 'Avanan manages DMARC, SPF, and DKIM configurations to authenticate outbound messages and prevent domain spoofing. Avanan ensures email integrity and protects clients, partners, and staff from impersonation-based fraud that frequently targets financial and insurance organizations.',
-          color: 'sky'
+          color: 'sky',
+          tags: ['Cloud']
       },
       {
           title: 'Security Awareness Training',
           vendor: 'Ninjio',
           desc: 'Ninjio provides engaging, story-driven cybersecurity training and phishing simulations that build a culture of awareness. Ninjio educates employees on modern threats and empowers them to recognize and report suspicious activity, significantly reducing human error across the organization.',
-          color: 'blue'
+          color: 'blue',
+          tags: ['Training']
       },
       {
-          title: 'SaaS Security',
+          title: 'Cloud Application Security',
           vendor: 'Avanan & CrowdStrike',
           desc: 'Avanan delivers SaaS-native security for Microsoft 365, Google Workspace, and collaboration tools by inspecting email, file sharing, and third-party integrations for phishing, malware, risky apps, and misconfigurations. CrowdStrike complements this by monitoring identity and endpoint telemetry for signs of account takeover, data exfiltration, and lateral movement into SaaS platforms, giving SMBs full-stack protection across users, devices, and cloud services.',
-          color: 'indigo'
+          color: 'indigo',
+          tags: ['Cloud', 'Identity']
       },
       {
-          title: 'ITDR',
-          vendor: 'CrowdStrike ITDR & Cisco Identity Intelligence',
+          title: 'Identity Threat Detection & Response',
+          vendor: 'CrowdStrike & Cisco',
           desc: 'CrowdStrike ITDR focuses on detecting and responding to identity-based threats by analyzing authentication patterns, privilege changes, and risky behavior across Active Directory, Entra ID, and other identity stores. Cisco Identity Intelligence enriches this by correlating identity, device, and network signals from Cisco’s security stack, flagging anomalous access, exposed accounts, and policy violations so organizations can quickly contain identity-driven attacks.',
-          color: 'fuchsia'
+          color: 'fuchsia',
+          tags: ['Identity']
       },
       {
-          title: 'SaaS Backups',
+          title: 'Cloud Workspace Backups',
           vendor: 'NinjaOne',
           desc: 'NinjaOne delivers automated, immutable SaaS backups for Microsoft 365 and Google Workspace, ensuring critical cloud data remains recoverable in cases of ransomware, accidental deletion, or configuration loss. NinjaOne safeguards business continuity for organizations relying heavily on cloud platforms.',
-          color: 'teal'
+          color: 'teal',
+          tags: ['Cloud']
       },
       {
-          title: 'NGAV',
+          title: 'Next Generation Antivirus',
           vendor: 'CrowdStrike',
-          desc: 'CrowdStrike’s Next-Generation Antivirus uses machine learning and behavioral analytics to block advanced malware, ransomware, and zero-day threats. CrowdStrike Prevent offers superior protection compared to traditional signature-based antivirus and is essential for securing modern distributed workforces.',
-          color: 'rose'
+          desc: 'CrowdStrike Falcon Prevent uses machine learning and behavioral analytics to block advanced malware, ransomware, and zero-day threats. CrowdStrike Prevent offers superior protection compared to traditional signature-based antivirus and is essential for securing modern distributed workforces.',
+          color: 'rose',
+          tags: ['Endpoint']
       },
       {
-          title: 'EDR',
+          title: 'Endpoint Detection & Response',
           vendor: 'CrowdStrike',
           desc: 'CrowdStrike Falcon Insight provides enterprise-grade Endpoint Detection and Response with real-time monitoring, behavioral analytics, and automated containment. CrowdStrike enables rapid detection of intrusions and isolates compromised devices before attackers can escalate privileges or exfiltrate data.',
-          color: 'pink'
+          color: 'pink',
+          tags: ['Endpoint']
       },
       {
-          title: 'MDR',
+          title: 'Managed Detection & Response',
           vendor: 'CrowdStrike',
           desc: 'CrowdStrike Falcon Complete delivers 24/7 managed detection and response operated by expert analysts who monitor, investigate, and contain threats on your behalf. CrowdStrike’s team provides enterprise-level protection for SMBs lacking internal SOC capabilities.',
-          color: 'red'
+          color: 'red',
+          tags: ['Endpoint']
       },
       {
-          title: 'Threat Hunting',
+          title: 'Managed Threat Hunting',
           vendor: 'CrowdStrike',
-          desc: 'CrowdStrike OverWatch performs proactive threat hunting to identify stealthy adversaries who evade automated detection. CrowdStrike analysts look for advanced attack techniques, suspicious behaviors, and hidden compromises, strengthening an organization’s resilience against sophisticated intruders.',
-          color: 'orange'
+          desc: 'CrowdStrike Falcon Overwatch performs proactive threat hunting to identify stealthy adversaries who evade automated detection. CrowdStrike analysts look for advanced attack techniques, suspicious behaviors, and hidden compromises, strengthening an organization’s resilience against sophisticated intruders.',
+          color: 'orange',
+          tags: ['Endpoint']
       },
       {
-          title: 'Vulnerability Management',
-          vendor: 'CrowdStrike Spotlight',
-          desc: 'CrowdStrike Spotlight provides continuous vulnerability assessment and prioritization based on real-world exploit intelligence. Spotlight helps organizations focus remediation efforts on the most critical risks, improving patch efficiency and reducing exposure across endpoints and applications.',
-          color: 'lime'
+          title: 'Exposure Management',
+          vendor: 'CrowdStrike',
+          desc: 'CrowdStrike Falcon Exposure Management provides continuous visibility into assets, vulnerabilities, and misconfigurations by unifying Falcon Spotlight and Falcon Discover with adversary-driven risk prioritization. This capability enables organizations to understand their true attack surface, identify the exposures most likely to be exploited, and systematically reduce risk across endpoints, applications, identities, and cloud workloads.',
+          color: 'lime',
+          tags: ['Endpoint']
       },
       {
-          title: 'SIEM (Unified Logging)',
-          vendor: 'CrowdStrike Search Retention / SIEM',
+          title: 'Unified Event Logging',
+          vendor: 'CrowdStrike',
           desc: 'CrowdStrike LogScale and Search Retention deliver unified logging, long-term retention, and SIEM capabilities that support forensic investigations and compliance reporting. CrowdStrike provides deep visibility into identity, endpoint, and cloud activity, helping organizations trace incidents and validate security posture.',
-          color: 'slate'
+          color: 'slate',
+          tags: ['Cloud']
       },
       {
-          title: 'RMM',
+          title: 'Remote Monitoring & Management',
           vendor: 'NinjaOne',
           desc: 'NinjaOne offers centralized remote monitoring and management that automates maintenance, enforces security configurations, and monitors system health. NinjaOne improves operational efficiency, reduces misconfigurations, and ensures consistent security standards across all managed endpoints.',
-          color: 'cyan'
+          color: 'cyan',
+          tags: ['Endpoint']
       },
       {
           title: 'Patching',
-          vendor: 'NinjaOne & CrowdStrike IT',
+          vendor: 'CrowdStrike & NinjaOne',
           desc: 'NinjaOne automates OS and application patch deployment with policy-based scheduling, testing, and reporting across servers and workstations. CrowdStrike Falcon for IT adds real-time asset visibility, missing-patch detection, and remote remediation for stubborn or high-risk endpoints, ensuring critical vulnerabilities are closed quickly across the entire environment.',
-          color: 'emerald'
+          color: 'emerald',
+          tags: ['Endpoint']
       },
       {
-          title: 'Endpoint Backups',
+          title: 'Endpoint & Server Backups',
           vendor: 'NinjaOne',
           desc: 'NinjaOne endpoint backups provide reliable protection for servers and workstations through scheduled backups, version control, and fast restore options. NinjaOne ensures organizations can recover quickly from data loss, ransomware, or hardware failure, supporting continuity for financial operations.',
-          color: 'violet'
+          color: 'violet',
+          tags: ['Endpoint']
       },
       {
           title: 'Network Management',
           vendor: 'Ubiquiti UniFi',
           desc: 'Ubiquiti UniFi delivers centralized management of wired and wireless networks with VLAN segmentation, secure Wi-Fi policies, device profiling, and intrusion detection. UniFi simplifies network governance and strengthens perimeter defense by limiting lateral movement opportunities.',
-          color: 'sky'
+          color: 'sky',
+          tags: ['Network']
       },
       {
-          title: 'SASE / SSE',
+          title: 'Secure Service Edge',
           vendor: 'Cisco Umbrella',
           desc: 'Cisco Umbrella provides DNS-layer security, secure web gateway, CASB, and cloud-delivered firewall controls to inspect and filter internet-bound traffic, while Cisco Secure Access extends this with Zero Trust Network Access and a unified client to broker secure, least-privilege access to private and SaaS applications. Together, they deliver a modern SASE/SSE architecture that protects remote and hybrid users without relying on legacy VPNs.',
-          color: 'blue'
+          color: 'blue',
+          tags: ['Network', 'Cloud']
       }
   ];
 
-
+  // Tag filtering state for Security Stack
+  let selectedTag: string | null = null;
+  const allTags: string[] = Array.from(new Set(stackItems.flatMap((i) => i.tags))).sort();
+  const toggleTag = (tag: string | null) => {
+    selectedTag = selectedTag === tag ? null : tag;
+  };
 </script>
 
 <a href="#opening" class="sr-only focus:not-sr-only focus:fixed focus:z-50 focus:top-4 focus:left-4 focus:rounded-md focus:bg-slate-900 focus:text-white focus:px-3 focus:py-2">Skip to content</a>
@@ -338,11 +364,11 @@
         <div class="mx-auto w-full max-w-md rounded-2xl border border-slate-200/70 bg-white/80 p-6 shadow-sm backdrop-blur ring-1 ring-black/0 animate-[fade-in_0.7s_ease-out_0.2s_both] dark:border-slate-700/60 dark:bg-slate-900/70">
           <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-50">What we handle for you:</h2>
           <ul class="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-200">
-            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Google Workspace & Microsoft 365 Security</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Enhanced Email Security & Employee Training</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Identity Access Management & Governance</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Endpoint Security, Vulnerability Management, and Patching.</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> 24/7 Managed Detection and Response</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Google Workspace, Microsoft 365 & Cloud Security</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Enhanced Email Security & Employee Awareness Training</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Identity & Privileged Access Management</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Endpoint Security, Exposure Management, and Patching.</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> 24/7 Managed Detection, Response, & Threat Hunting</li>
           </ul>
         </div>
       </div>
@@ -455,10 +481,47 @@
         <p class="mt-3 text-slate-600 dark:text-slate-300">Behind every plan is a curated toolset from leading security vendors. Explore the components we deploy and why each one matters.</p>
       </header>
 
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {#if allTags.length}
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-2">
+          <button
+            class={
+              (selectedTag === null)
+                ? 'inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 bg-cyan-600 text-white ring-cyan-600 hover:bg-cyan-700'
+                : 'inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 bg-slate-100 text-slate-700 ring-slate-300 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600 dark:hover:bg-slate-700'
+            }
+            aria-pressed={selectedTag === null}
+            on:click={() => toggleTag(null)}
+          >
+            All
+          </button>
+          {#each allTags as tag}
+            <button
+              class={
+                (selectedTag === tag)
+                  ? 'inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 bg-cyan-600 text-white ring-cyan-600 hover:bg-cyan-700'
+                  : 'inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 bg-slate-100 text-slate-700 ring-slate-300 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600 dark:hover:bg-slate-700'
+              }
+              aria-pressed={selectedTag === tag}
+              on:click={() => toggleTag(tag)}
+            >
+              {tag}
+            </button>
+          {/each}
+        </div>
+      {/if}
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
         {#each stackItems as item}
           {@const c = colorMap[item.color] ?? colorMap.slate}
-          <article class="group relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm ring-1 ring-black/0 transition duration-300 hover:-translate-y-0.5 hover:shadow-md focus-within:-translate-y-0.5 motion-reduce:transform-none motion-reduce:transition-none dark:border-slate-700/60 dark:bg-slate-900">
+          <article
+            class={`group relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm ring-1 ring-black/0 transition duration-300 hover:-translate-y-0.5 hover:shadow-md focus-within:-translate-y-0.5 motion-reduce:transform-none motion-reduce:transition-none dark:border-slate-700/60 dark:bg-slate-900 ${
+              typeof selectedTag === 'string' && item.tags?.includes(selectedTag)
+                ? 'ring-cyan-400/40 border-cyan-300/60'
+                : ''
+            }`}
+            class:opacity-100={typeof selectedTag === 'string' ? item.tags?.includes(selectedTag) : true}
+            class:opacity-40={typeof selectedTag === 'string' && !item.tags?.includes(selectedTag)}
+          >
             <div class={`absolute -top-10 right-[-40px] h-28 w-28 rounded-full opacity-10 blur-2xl transition duration-300 group-hover:opacity-20 ${c.spot}`} aria-hidden="true"></div>
             <div class="flex items-start gap-3">
               <!-- Logo -->
@@ -476,6 +539,13 @@
               </div>
             </div>
             <p class="mt-3 text-sm text-slate-700 dark:text-slate-200">{item.desc}</p>
+            {#if item.tags?.length}
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                {#each item.tags as tag}
+                  <span class="inline-flex items-center rounded-full border border-slate-300/70 bg-slate-50 px-2 py-0.5 text-[10px] font-medium text-slate-700 ring-1 ring-inset ring-black/0 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300">{tag}</span>
+                {/each}
+              </div>
+            {/if}
           </article>
         {/each}
       </div>
@@ -506,8 +576,11 @@
                 <a class="font-medium hover:text-cyan-700 dark:hover:text-cyan-300 underline-offset-4 hover:underline" href="mailto:samuel@mullaneystrategicsystems.com">samuel@mullaneystrategicsystems.com</a>
               </div>
               <div class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
-                <svg class="h-5 w-5 text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.6 10.2a15 15 0 007.2 7.2l2.4-2.4a1 1 0 011 .1 11.5 11.5 0 003.4 1.1 1 1 0 01.9 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h2.8a1 1 0 011 .9 11.5 11.5 0 001.1 3.4 1 1 0 01-.1 1l-2.2 2.9z"/></svg>
-                <span class="font-medium">Serving the greater DMV area</span>
+                <svg class="h-5 w-5 text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M19.5 10.5c0 4.5-7.5 10.5-7.5 10.5S4.5 15 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
+                  <circle cx="12" cy="10.5" r="2.5"/>
+                </svg>
+                <span class="font-medium">Maryland & Delaware</span>
               </div>
             </div>
 
