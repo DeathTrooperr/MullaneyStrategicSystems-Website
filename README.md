@@ -45,6 +45,23 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
+## Environment Variables
+
+The project requires several environment variables for Cloudflare Turnstile and Email functionality.
+
+1.  Copy `.env.example` to `.env`.
+2.  Fill in the values in `.env`:
+    *   `PUBLIC_TURNSTILE_SITE_KEY`: Your Cloudflare Turnstile Site Key.
+    *   `TURNSTILE_SECRET_KEY`: Your Cloudflare Turnstile Secret Key.
+
+### Deployment on Cloudflare Pages
+
+When deploying to Cloudflare Pages:
+
+1.  Go to your Project Settings -> Variables and Secrets.
+2.  Add `PUBLIC_TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY` in both **Production** and **Preview** environments.
+3.  Ensure the `SEND_EMAIL` binding is configured in Project Settings -> Functions -> Email Bindings.
+
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
 
 ## Publishing

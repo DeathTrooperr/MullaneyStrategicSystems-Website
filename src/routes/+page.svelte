@@ -1,7 +1,9 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
+  import { env } from '$env/dynamic/public';
   import { enhance } from '$app/forms';
+
+  const PUBLIC_TURNSTILE_SITE_KEY = env.PUBLIC_TURNSTILE_SITE_KEY;
 
   type StackItem = {
     title: string;
