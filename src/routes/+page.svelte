@@ -62,7 +62,7 @@
         if (result.type === 'error') {
           formStatus = { 
             success: false, 
-            message: 'A server error occurred. Please try again later.' 
+            message: 'A server error occurred. Please try again later, or contact us directly at samuel@mullaneystrategicsystems.com.' 
           };
         }
       }
@@ -335,7 +335,10 @@
                 <p class="text-sm text-slate-600 dark:text-slate-300">Fill out the form below and we'll be in touch.</p>
 
                 {#if formStatus?.success === false}
-                  <div class="rounded-md bg-red-50 p-3 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+                  <div 
+                    in:fly={{ y: -10, duration: 300 }}
+                    class="rounded-md bg-red-50 p-3 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400"
+                  >
                     {formStatus.message}
                   </div>
                 {/if}

@@ -17,12 +17,12 @@ export const actions = {
 
 		if (!name || !email || !message) {
 			console.warn('Missing required fields');
-			return fail(400, { message: 'Please fill out all fields.' });
+			return fail(400, { message: 'All fields are required. Please ensure name, email, and message are filled out.' });
 		}
 
 		if (!turnstileToken) {
 			console.warn('Missing turnstile token');
-			return fail(400, { message: 'Security verification is required. Please try again.' });
+			return fail(400, { message: 'Please complete the security verification to send your message.' });
 		}
 
 		// Validate Turnstile
@@ -52,7 +52,7 @@ export const actions = {
 		console.log('Turnstile validation result:', outcome);
 		if (!outcome.success) {
 			console.warn('Turnstile validation failed');
-			return fail(400, { message: 'Security verification failed. Please try again.' });
+			return fail(400, { message: 'Security verification failed. Please refresh the page and try again.' });
 		}
 
 		if (!platform?.env.SEND_EMAIL) {
@@ -84,7 +84,7 @@ export const actions = {
 			return { success: true };
 		} catch (e) {
 			console.error('Error during email preparation or sending:', e);
-			return fail(500, { message: 'We couldn’t send your message right now. Please try again later or call us directly.' });
+			return fail(500, { message: 'We were unable to send your message at this time. Please try again later or contact us directly at samuel@mullaneystrategicsystems.com.' });
 		}
 	}
 } satisfies Actions;
