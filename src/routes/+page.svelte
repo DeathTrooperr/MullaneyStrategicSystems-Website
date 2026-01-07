@@ -163,123 +163,141 @@
         <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">We meet you where you are</h2>
         <p class="mt-3 text-slate-600 dark:text-slate-300">We support today’s leading cloud workspace providers configured in both hybrid and cloud‑only environments.</p>
       </header>
-      <div class="mt-10 grid items-stretch justify-center gap-6 sm:grid-cols-3">
+      <div class="mt-12 grid gap-8 lg:grid-cols-3 lg:items-stretch">
         <!-- Google Workspace -->
-        <div class="group relative flex flex-col items-center overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm ring-1 ring-black/0 transition duration-300 hover:-translate-y-0.5 hover:shadow-md focus-within:-translate-y-0.5 motion-reduce:transform-none motion-reduce:transition-none dark:border-slate-700/60 dark:bg-slate-900" aria-label="Google Workspace">
-          <div class="flex items-center gap-3">
-            <img src="/imgs/google.png" alt="Google Workspace logo" class="h-7 w-7 object-contain" loading="lazy" />
-            <span class="text-base font-semibold text-slate-700 dark:text-slate-200">Google Workspace</span>
+        <article class="relative flex flex-col rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:border-slate-700/50 dark:bg-slate-900/50">
+          <div class="flex-1">
+            <div class="flex flex-col items-center gap-3 text-center">
+              <div class="rounded-full bg-slate-50 p-2 dark:bg-slate-800">
+                <img src="/imgs/google.png" alt="Google Workspace logo" class="h-6 w-6 object-contain" loading="lazy" />
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">Google Workspace</h3>
+            </div>
+
+            <div class="mt-6 border-t border-slate-100 pt-6 dark:border-slate-800">
+              <ul class="space-y-4 text-sm text-slate-700 dark:text-slate-200">
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Native, API-based integrations providing deep, continuous visibility across the workspace</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Purpose-built access models that avoid broad or persistent service accounts</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Service accounts used only when required for advanced remediation or delegated actions</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Permissions are tightly scoped and aligned to least-privilege principles</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Designed to operate effectively within Google platform security constraints</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="mt-4 w-full border-t border-slate-200/70 dark:border-slate-700/60"></div>
-          <div class="mt-4 space-y-2 text-xs text-slate-600 dark:text-slate-300">
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Native, API-based integrations providing deep, continuous visibility across the workspace</p>
-            </div>
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Purpose-built access models that avoid broad or persistent service accounts</p>
-            </div>
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Service accounts used only when required for advanced remediation or delegated actions</p>
-            </div>
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Permissions are tightly scoped and aligned to least-privilege principles</p>
-            </div>
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Designed to operate effectively within Google platform security constraints</p>
-            </div>
-          </div>
-        </div>
+        </article>
 
         <!-- Microsoft 365 -->
-        <div class="group relative flex flex-col items-center overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm ring-1 ring-black/0 transition duration-300 hover:-translate-y-0.5 hover:shadow-md focus-within:-translate-y-0.5 motion-reduce:transform-none motion-reduce:transition-none dark:border-slate-700/60 dark:bg-slate-900" aria-label="Microsoft 365">
-          <div class="flex items-center gap-3">
-            <img src="/imgs/microsoft365.png" alt="Microsoft 365 logo" class="h-7 w-7 object-contain" loading="lazy" />
-            <span class="text-base font-semibold text-slate-700 dark:text-slate-200">Microsoft 365</span>
+        <article class="relative flex flex-col rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:border-slate-700/50 dark:bg-slate-900/50">
+          <div class="flex-1">
+            <div class="flex flex-col items-center gap-3 text-center">
+              <div class="rounded-full bg-slate-50 p-2 dark:bg-slate-800">
+                <img src="/imgs/microsoft365.png" alt="Microsoft 365 logo" class="h-6 w-6 object-contain" loading="lazy" />
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">Microsoft 365</h3>
+            </div>
+
+            <div class="mt-6 border-t border-slate-100 pt-6 dark:border-slate-800">
+              <ul class="space-y-4 text-sm text-slate-700 dark:text-slate-200">
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Full API integration across identity, email, audit, and security telemetry</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Near real-time visibility across the Microsoft cloud security ecosystem</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Eliminates the need for always-on service accounts for standard monitoring</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Service accounts introduced only for targeted remediation or optional full management</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Maintains strong control while minimizing credential and privilege exposure</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="mt-4 w-full border-t border-slate-200/70 dark:border-slate-700/60"></div>
-          <div class="mt-4 space-y-2 text-xs text-slate-600 dark:text-slate-300">
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Full API integration across identity, email, audit, and security telemetry</p>
-            </div>
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Near real-time visibility across the Microsoft cloud security ecosystem</p>
-            </div>
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Eliminates the need for always-on service accounts for standard monitoring</p>
-            </div>
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Service accounts introduced only for targeted remediation or optional full management</p>
-            </div>
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Maintains strong control while minimizing credential and privilege exposure</p>
-            </div>
-          </div>
-        </div>
+        </article>
 
         <!-- Hybrid / Active Directory -->
-        <div class="group relative flex flex-col items-center overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm ring-1 ring-black/0 transition duration-300 hover:-translate-y-0.5 hover:shadow-md focus-within:-translate-y-0.5 motion-reduce:transform-none motion-reduce:transition-none dark:border-slate-700/60 dark:bg-slate-900" aria-label="Hybrid Active Directory">
-          <div class="flex items-center gap-3">
-            <img src="/imgs/hybrid-ad.svg" alt="Azure Active Directory logo" class="h-7 w-7 object-contain" loading="lazy" />
-            <span class="text-base font-semibold text-slate-700 dark:text-slate-200">Hybrid AD</span>
+        <article class="relative flex flex-col rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md dark:border-slate-700/50 dark:bg-slate-900/50">
+          <div class="flex-1">
+            <div class="flex flex-col items-center gap-3 text-center">
+              <div class="rounded-full bg-slate-50 p-2 dark:bg-slate-800">
+                <img src="/imgs/hybrid-ad.svg" alt="Azure Active Directory logo" class="h-6 w-6 object-contain" loading="lazy" />
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">Hybrid AD</h3>
+            </div>
+
+            <div class="mt-6 border-t border-slate-100 pt-6 dark:border-slate-800">
+              <ul class="space-y-4 text-sm text-slate-700 dark:text-slate-200">
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Direct protection of identity infrastructure and supporting systems</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Deep coverage for legacy servers and hybrid identity components</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Seamless integration with cloud workspace APIs for unified visibility</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                  <span>Consistent security controls across on-prem and cloud environments</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="mt-4 w-full border-t border-slate-200/70 dark:border-slate-700/60"></div>
-          <div class="mt-4 space-y-2 text-xs text-slate-600 dark:text-slate-300">
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Direct protection of identity infrastructure and supporting systems</p>
-            </div>
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Deep coverage for legacy servers and hybrid identity components</p>
-            </div>
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Seamless integration with cloud workspace APIs for unified visibility</p>
-            </div>
-            <div class="flex items-start gap-2 text-left">
-              <svg class="mt-0.5 h-3.5 w-3.5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
-              </svg>
-              <p>Consistent security controls across on-prem and cloud environments</p>
-            </div>
-          </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>

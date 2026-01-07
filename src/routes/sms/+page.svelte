@@ -8,9 +8,9 @@
 
 <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
   <article class="prose prose-slate dark:prose-invert lg:prose-lg mx-auto">
-    <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl">SMS Privacy Policy</h1>
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl text-center">SMS Privacy Policy</h1>
     
-    <div class="mt-4 flex flex-col gap-1 text-sm text-slate-500 dark:text-slate-400">
+    <div class="mt-4 flex flex-col items-center gap-1 text-base font-medium text-slate-600 dark:text-slate-300">
       <p>Effective Date: January 1st, 2026</p>
       <p>Last Updated: {lastUpdated}</p>
     </div>

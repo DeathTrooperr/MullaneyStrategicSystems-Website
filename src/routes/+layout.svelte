@@ -14,9 +14,13 @@
   ];
 </script>
 
+<svelte:head>
+  <title>Mullaney Strategic Systems</title>
+</svelte:head>
+
 <a href="#opening" class="sr-only focus:not-sr-only focus:fixed focus:z-50 focus:top-4 focus:left-4 focus:rounded-md focus:bg-slate-900 focus:text-white focus:px-3 focus:py-2">Skip to content</a>
 
-<header class="sticky top-0 z-40 border-b border-slate-200/60 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/75 dark:border-slate-700/40 dark:bg-slate-900/70">
+<header class="sticky top-0 z-50 border-b border-slate-200/60 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/75 dark:border-slate-700/40 dark:bg-slate-900/70">
   <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Primary">
     <a href="/#opening" class="group inline-flex items-center gap-2" aria-label="Mullaney Strategic Systems home">
       <svg class="h-8 w-8 text-cyan-600 transition group-hover:scale-105 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
