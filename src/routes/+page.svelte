@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { fade, fly } from 'svelte/transition';
   import { env } from '$env/dynamic/public';
   import { enhance } from '$app/forms';
   import SecurityStack from '$lib/components/SecurityStack.svelte';
@@ -11,32 +12,59 @@
   let formStatus = $state<{ success?: boolean; message?: string } | null>(null);
   let turnstileContainer = $state<HTMLElement | null>(null);
   let widgetId = $state<string | null>(null);
+  let formElement = $state<HTMLFormElement | null>(null);
+
+  async function handleResetForm() {
+    formStatus = null;
+    // Reset Turnstile token as it's definitely invalid now
+    turnstileToken = '';
+    
+    // We already reset turnstile on success, but just in case
+    if ((window as any).turnstile && widgetId) {
+      (window as any).turnstile.reset(widgetId);
+    }
+    
+    // Scroll back to form top if needed
+    document.getElementById('contact-form-container')?.scrollIntoView({ behavior: 'smooth' });
+  }
 
   async function handleEnhance() {
     isSubmitting = true;
-    return async ({ result }: { result: any }) => {
-      isSubmitting = false;
+    return async ({ result, update }: { result: any; update: any }) => {
+      // Don't set isSubmitting to false immediately if we are showing success state
+      // as it might cause button flicker if the transition is fast
+      
       if (result.type === 'success') {
         formStatus = { success: true };
         turnstileToken = '';
+        isSubmitting = false;
+        
+        // Let SvelteKit handle the form reset and state update
+        await update({ reset: true });
+        
         // Reset Turnstile widget
         if ((window as any).turnstile && widgetId) {
           (window as any).turnstile.reset(widgetId);
         }
       } else if (result.type === 'failure') {
+        isSubmitting = false;
         // Reset Turnstile on failure as well to allow retry
         if ((window as any).turnstile && widgetId) {
           (window as any).turnstile.reset(widgetId);
+          turnstileToken = '';
         }
         formStatus = { 
           success: false, 
-          message: result.data?.message || 'Something went wrong' 
+          message: result.data?.message || 'Something went wrong. Please check your information and try again.' 
         };
-      } else if (result.type === 'error') {
-        formStatus = { 
-          success: false, 
-          message: 'A server error occurred. Please try again later.' 
-        };
+      } else {
+        isSubmitting = false;
+        if (result.type === 'error') {
+          formStatus = { 
+            success: false, 
+            message: 'A server error occurred. Please try again later.' 
+          };
+        }
       }
     };
   }
@@ -271,26 +299,33 @@
             </div>
           </div>
 
-          <!-- Right: simple email form -->
-          <div class="relative border-t border-slate-200/70 p-8 sm:p-10 lg:p-12 md:border-l md:border-t-0 dark:border-slate-700/60">
+          <div id="contact-form-container" class="relative border-t border-slate-200/70 p-8 sm:p-10 lg:p-12 md:border-l md:border-t-0 dark:border-slate-700/60">
             {#if formStatus?.success}
-              <div class="flex h-full flex-col items-center justify-center text-center space-y-4">
-                <div class="rounded-full bg-emerald-100 p-3 dark:bg-emerald-900/30">
+              <div in:fade={{ duration: 300 }} out:fade={{ duration: 200 }} class="absolute inset-0 p-8 sm:p-10 lg:p-12 flex flex-col items-center justify-center text-center space-y-4 z-10 bg-white dark:bg-slate-900">
+                <div in:fly={{ y: 20, duration: 400, delay: 100 }} class="rounded-full bg-emerald-100 p-3 dark:bg-emerald-900/30">
                   <svg class="h-8 w-8 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">Message sent!</h3>
-                <p class="text-slate-600 dark:text-slate-300">Thanks for reaching out. We'll get back to you soon.</p>
+                <h3 in:fly={{ y: 20, duration: 400, delay: 200 }} class="text-xl font-semibold text-slate-900 dark:text-slate-50">Message sent!</h3>
+                <p in:fly={{ y: 20, duration: 400, delay: 300 }} class="text-slate-600 dark:text-slate-300">Thanks for reaching out. We'll get back to you soon.</p>
                 <button 
-                  onclick={() => formStatus = null}
-                  class="text-sm font-medium text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+                  type="button"
+                  onclick={handleResetForm}
+                  in:fly={{ y: 20, duration: 400, delay: 400 }}
+                  class="text-sm font-medium text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 transition-colors"
                 >
                   Send another message
                 </button>
               </div>
-            {:else}
+            {/if}
+
+            <div 
+              class="{formStatus?.success ? 'invisible pointer-events-none' : 'visible'}"
+              aria-hidden={formStatus?.success ? 'true' : 'false'}
+            >
               <form 
+                bind:this={formElement}
                 class="space-y-4" 
                 method="POST" 
                 use:enhance={handleEnhance}
@@ -328,9 +363,13 @@
                   <button 
                     type="submit" 
                     disabled={!turnstileToken || isSubmitting} 
-                    class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-cyan-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-cyan-700/20 hover:bg-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                    class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-cyan-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-cyan-700/20 hover:bg-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                   >
                     {#if isSubmitting}
+                      <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
                       Sending...
                     {:else}
                       Send message
@@ -340,7 +379,7 @@
 
                 <p class="text-xs text-slate-500 dark:text-slate-400">We usually respond within one business day.</p>
               </form>
-            {/if}
+            </div>
           </div>
         </div>
       </div>

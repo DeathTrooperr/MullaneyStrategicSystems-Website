@@ -15,9 +15,14 @@ export const actions = {
 
 		console.log('Received form data:', { name, email, messageLength: message?.length, hasTurnstileToken: !!turnstileToken });
 
-		if (!name || !email || !message || !turnstileToken) {
+		if (!name || !email || !message) {
 			console.warn('Missing required fields');
-			return fail(400, { message: 'Missing required fields' });
+			return fail(400, { message: 'Please fill out all fields.' });
+		}
+
+		if (!turnstileToken) {
+			console.warn('Missing turnstile token');
+			return fail(400, { message: 'Security verification is required. Please try again.' });
 		}
 
 		// Validate Turnstile
@@ -38,11 +43,16 @@ export const actions = {
 			method: 'POST'
 		});
 
+		if (!result.ok) {
+			console.error('Turnstile verification request failed', await result.text());
+			return fail(500, { message: 'Security service is temporarily unavailable.' });
+		}
+
 		const outcome = await result.json() as { success: boolean };
 		console.log('Turnstile validation result:', outcome);
 		if (!outcome.success) {
 			console.warn('Turnstile validation failed');
-			return fail(400, { message: 'Invalid turnstile token' });
+			return fail(400, { message: 'Security verification failed. Please try again.' });
 		}
 
 		if (!platform?.env.SEND_EMAIL) {
@@ -53,7 +63,7 @@ export const actions = {
 		try {
 			console.log('Preparing email message');
 			const msg = createMimeMessage();
-			msg.setSender({ name: 'Website Contact Form', addr: 'noreply@mullaneystrategicsystems.com' });
+			msg.setSender({ name: 'Website Contact Form', addr: 'noreply@pd.mullaneystrategicsystems.com' });
 			msg.setRecipient('samuel@mullaneystrategicsystems.com');
 			msg.setSubject(`Contact Form Submission from ${name}`);
 			msg.addMessage({
@@ -63,7 +73,7 @@ export const actions = {
 
 			console.log('Sending email via platform binding');
 			const emailMessage = new EmailMessage(
-				'noreply@mullaneystrategicsystems.com',
+				'noreply@pd.mullaneystrategicsystems.com',
 				'samuel@mullaneystrategicsystems.com',
 				msg.asRaw()
 			);
@@ -74,7 +84,7 @@ export const actions = {
 			return { success: true };
 		} catch (e) {
 			console.error('Error during email preparation or sending:', e);
-			return fail(500, { message: 'Failed to send email' });
+			return fail(500, { message: 'We couldn’t send your message right now. Please try again later or call us directly.' });
 		}
 	}
 } satisfies Actions;
