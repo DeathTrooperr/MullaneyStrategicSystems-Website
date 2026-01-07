@@ -63,7 +63,7 @@ export const actions = {
 		try {
 			console.log('Preparing email message');
 			const msg = createMimeMessage();
-			msg.setSender({ name: 'Website Contact Form', addr: 'noreply@pd.mullaneystrategicsystems.com' });
+			msg.setSender({ name: 'Website Contact Form', addr: 'noreply@cloudflare.mullaneystrategicsystems.com' });
 			msg.setRecipient('samuel@mullaneystrategicsystems.com');
 			msg.setSubject(`Contact Form Submission from ${name}`);
 			msg.addMessage({
@@ -73,7 +73,7 @@ export const actions = {
 
 			console.log('Sending email via platform binding');
 			const emailMessage = new EmailMessage(
-				'noreply@pd.mullaneystrategicsystems.com',
+				'noreply@cloudflare.mullaneystrategicsystems.com',
 				'samuel@mullaneystrategicsystems.com',
 				msg.asRaw()
 			);

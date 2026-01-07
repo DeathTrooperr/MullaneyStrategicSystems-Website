@@ -127,7 +127,7 @@
           Mullaney Strategic Systems, <span class="text-transparent bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text dark:from-cyan-400 dark:to-blue-400">Security done right.</span>
         </h1>
         <p class="mt-6 text-pretty text-base leading-7 text-slate-700 dark:text-slate-300 animate-[fade-up_0.6s_ease-out_0.15s_both]">
-          Mullaney Strategic Systems delivers opinionated, security-first managed services for small business with a focus on financial & insurance practices that can’t afford to get cybersecurity wrong.
+          Mullaney Strategic Systems delivers precise, security-first managed services for small business with a focus on financial & insurance practices that can’t afford to get cybersecurity wrong.
         </p>
         <div class="mt-8 flex flex-wrap items-center gap-3 animate-[fade-up_0.6s_ease-out_0.25s_both]">
           <a href="#contact" class="inline-flex items-center gap-2 rounded-md bg-cyan-600 px-4 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-cyan-700/20 hover:bg-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500">
@@ -144,7 +144,7 @@
         <div class="mx-auto w-full max-w-md rounded-2xl border border-slate-200/70 bg-white/80 p-6 shadow-sm backdrop-blur ring-1 ring-black/0 animate-[fade-in_0.7s_ease-out_0.2s_both] dark:border-slate-700/60 dark:bg-slate-900/70">
           <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-50">What we handle for you:</h2>
           <ul class="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-200">
-            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Google Workspace, Microsoft 365 & Cloud Security</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Google Workspace & Microsoft 365 Security</li>
             <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Enhanced Email Security & Employee Awareness Training</li>
             <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Identity & Privileged Access Management</li>
             <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Endpoint Security, Exposure Management, and Patching.</li>
