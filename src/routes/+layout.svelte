@@ -70,19 +70,20 @@
   </div>
 
   {@render children()}
+
+  <div class="mt-8 flex justify-center pb-8">
+    <a href="#opening" class="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:text-slate-300 dark:hover:text-cyan-300">
+      Back to top
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5m0 0l-7 7m7-7l7 7"/></svg>
+    </a>
+  </div>
 </main>
 
 <footer class="relative border-t border-slate-200/60 bg-white py-8 dark:border-slate-700/40 dark:bg-slate-950">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
-      <div class="flex flex-col items-center gap-2 sm:items-start">
-        <p class="text-sm text-slate-500 dark:text-slate-400">© {new Date().getFullYear()} Mullaney Strategic Systems. All rights reserved.</p>
-        <a href="/sms" class="text-xs text-slate-400 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400">SMS Privacy Policy</a>
-      </div>
-      <a href="#opening" class="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:text-slate-300 dark:hover:text-cyan-300">
-        Back to top
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5m0 0l-7 7m7-7l7 7"/></svg>
-      </a>
+      <p class="text-sm text-slate-500 dark:text-slate-400 text-center sm:text-left">© {new Date().getFullYear()} Mullaney Strategic Systems. All rights reserved.</p>
+      <a href="/sms" class="text-xs text-slate-400 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400">SMS Privacy Policy</a>
     </div>
   </div>
   <svg aria-hidden="true" class="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-48 w-full max-w-7xl -translate-x-1/2 blur-3xl" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="footer-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#22d3ee" stop-opacity="0.15"/><stop offset="100%" stop-color="#38bdf8" stop-opacity="0.05"/></linearGradient></defs><ellipse cx="300" cy="100" rx="280" ry="80" fill="url(#footer-grad)"/></svg>

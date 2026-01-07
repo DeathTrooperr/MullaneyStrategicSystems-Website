@@ -1,21 +1,29 @@
 import { fail } from '@sveltejs/kit';
 import type { Actions } from './$types.js';
-
+import { createMimeMessage } from 'mimetext';
+// @ts-ignore
 export const actions = {
 	default: async ({ request, platform }) => {
+		// @ts-ignore
+		const { EmailMessage } = await import('cloudflare:email');
+		console.log('Contact form submission started');
 		const data = await request.formData();
 		const name = data.get('name') as string;
 		const email = data.get('email') as string;
 		const message = data.get('message') as string;
 		const turnstileToken = data.get('cf-turnstile-response') as string;
 
+		console.log('Received form data:', { name, email, messageLength: message?.length, hasTurnstileToken: !!turnstileToken });
+
 		if (!name || !email || !message || !turnstileToken) {
+			console.warn('Missing required fields');
 			return fail(400, { message: 'Missing required fields' });
 		}
 
 		// Validate Turnstile
 		// Cloudflare Turnstile verification: https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
-		const secretKey = (platform?.env as any)?.TURNSTILE_SECRET_KEY;
+		console.log('Starting Turnstile validation');
+		const secretKey = platform?.env?.TURNSTILE_SECRET_KEY;
 		if (!secretKey) {
 			console.error('TURNSTILE_SECRET_KEY not found in environment');
 			return fail(500, { message: 'Security service not configured' });
@@ -31,7 +39,9 @@ export const actions = {
 		});
 
 		const outcome = await result.json() as { success: boolean };
+		console.log('Turnstile validation result:', outcome);
 		if (!outcome.success) {
+			console.warn('Turnstile validation failed');
 			return fail(400, { message: 'Invalid turnstile token' });
 		}
 
@@ -41,27 +51,29 @@ export const actions = {
 		}
 
 		try {
-			// Using the Email Workers API via the binding
-			// https://developers.cloudflare.com/email-routing/email-workers/send-email-workers/#send-emails-from-a-worker
-            const { createMimeMessage } = await import('mimetext');
-            const msg = createMimeMessage();
-            msg.setSender({ name: "Website Contact Form", addr: "noreply@mullaneystrategicsystems.com" });
-            msg.setRecipient("samuel@mullaneystrategicsystems.com");
-            msg.setSubject(`Contact Form Submission from ${name}`);
-            msg.addMessage({
-                contentType: 'text/plain',
-                data: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-            });
-
-			await (platform.env.SEND_EMAIL as any).send({
-				from: "noreply@mullaneystrategicsystems.com",
-				to: "samuel@mullaneystrategicsystems.com",
-				raw: msg.asRaw()
+			console.log('Preparing email message');
+			const msg = createMimeMessage();
+			msg.setSender({ name: 'Website Contact Form', addr: 'noreply@mullaneystrategicsystems.com' });
+			msg.setRecipient('samuel@mullaneystrategicsystems.com');
+			msg.setSubject(`Contact Form Submission from ${name}`);
+			msg.addMessage({
+				contentType: 'text/plain',
+				data: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
 			});
 
+			console.log('Sending email via platform binding');
+			const emailMessage = new EmailMessage(
+				'noreply@mullaneystrategicsystems.com',
+				'samuel@mullaneystrategicsystems.com',
+				msg.asRaw()
+			);
+
+			await platform.env.SEND_EMAIL.send(emailMessage);
+
+			console.log('Email sent successfully');
 			return { success: true };
 		} catch (e) {
-			console.error('Error sending email:', e);
+			console.error('Error during email preparation or sending:', e);
 			return fail(500, { message: 'Failed to send email' });
 		}
 	}

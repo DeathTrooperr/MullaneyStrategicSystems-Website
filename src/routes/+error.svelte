@@ -37,10 +37,10 @@
         Back to home
       </a>
       <a 
-        href="/#contact" 
+        href="mailto:support@mullaneystrategicsystems.com"
         class="inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold text-slate-800 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:text-slate-100 dark:ring-slate-600 dark:hover:bg-slate-800"
       >
-        Contact support
+        Email support
         <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
     </div>
