@@ -1,13 +1,7 @@
 <script lang="ts">
-  let mobileOpen = false;
-  const closeMobile = () => (mobileOpen = false);
-  const navItems = [
-    { href: '#opening', label: 'Home' },
-    { href: '#providers', label: 'Cloud Providers' },
-    { href: '#plans', label: 'Service Plans' },
-    { href: '#stack', label: 'Security Stack' },
-    { href: '#contact', label: 'Contact' }
-  ];
+  import { onMount } from 'svelte';
+  import { PUBLIC_TURNSTILE_SITE_KEY } from '$env/static/public';
+  import { enhance } from '$app/forms';
 
   type StackItem = {
     title: string;
@@ -277,70 +271,99 @@
   ];
 
   // Tag filtering state for Security Stack
-  let selectedTag: string | null = null;
+  let selectedTag = $state<string | null>(null);
   const allTags: string[] = Array.from(new Set(stackItems.flatMap((i) => i.tags))).sort();
   const toggleTag = (tag: string | null) => {
     selectedTag = selectedTag === tag ? null : tag;
   };
+
+  let turnstileToken = $state('');
+  let isSubmitting = $state(false);
+  let formStatus = $state<{ success?: boolean; message?: string } | null>(null);
+  let turnstileContainer = $state<HTMLElement | null>(null);
+  let widgetId = $state<string | null>(null);
+
+  async function handleEnhance() {
+    isSubmitting = true;
+    return async ({ result }: { result: any }) => {
+      isSubmitting = false;
+      if (result.type === 'success') {
+        formStatus = { success: true };
+        turnstileToken = '';
+        // Reset Turnstile widget
+        if ((window as any).turnstile && widgetId) {
+          (window as any).turnstile.reset(widgetId);
+        }
+      } else if (result.type === 'failure') {
+        // Reset Turnstile on failure as well to allow retry
+        if ((window as any).turnstile && widgetId) {
+          (window as any).turnstile.reset(widgetId);
+        }
+        formStatus = { 
+          success: false, 
+          message: result.data?.message || 'Something went wrong' 
+        };
+      } else if (result.type === 'error') {
+        formStatus = { 
+          success: false, 
+          message: 'A server error occurred. Please try again later.' 
+        };
+      }
+    };
+  }
+
+  onMount(() => {
+    const initTurnstile = () => {
+      if ((window as any).turnstile && turnstileContainer) {
+        widgetId = (window as any).turnstile.render(turnstileContainer, {
+          sitekey: PUBLIC_TURNSTILE_SITE_KEY,
+          callback: (token: string) => {
+            turnstileToken = token;
+          },
+          'error-callback': () => {
+            turnstileToken = '';
+            formStatus = { success: false, message: 'Turnstile verification failed to load. Please refresh.' };
+          },
+          'expired-callback': () => {
+            turnstileToken = '';
+            if ((window as any).turnstile && widgetId) {
+              (window as any).turnstile.reset(widgetId);
+            }
+          }
+        });
+      }
+    };
+
+    if ((window as any).turnstile) {
+      initTurnstile();
+    } else {
+      // If script not loaded yet, wait for it
+      const interval = setInterval(() => {
+        if ((window as any).turnstile) {
+          clearInterval(interval);
+          initTurnstile();
+        }
+      }, 100);
+      
+      return () => {
+        clearInterval(interval);
+        if (widgetId && (window as any).turnstile) {
+          (window as any).turnstile.remove(widgetId);
+        }
+      };
+    }
+
+    return () => {
+      if (widgetId && (window as any).turnstile) {
+        (window as any).turnstile.remove(widgetId);
+      }
+    };
+  });
 </script>
 
-<a href="#opening" class="sr-only focus:not-sr-only focus:fixed focus:z-50 focus:top-4 focus:left-4 focus:rounded-md focus:bg-slate-900 focus:text-white focus:px-3 focus:py-2">Skip to content</a>
-
-<header class="sticky top-0 z-40 border-b border-slate-200/60 bg-white/85 backdrop-blur supports-[backdrop-filter]:bg-white/75 dark:border-slate-700/40 dark:bg-slate-900/70">
-  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Primary">
-    <a href="#opening" class="group inline-flex items-center gap-2" aria-label="Mullaney Strategic Systems home">
-      <svg class="h-8 w-8 text-cyan-600 transition group-hover:scale-105 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <defs>
-          <linearGradient id="ms-grad" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0%" stop-color="currentColor" stop-opacity="1" />
-            <stop offset="100%" stop-color="currentColor" stop-opacity="0.5" />
-          </linearGradient>
-        </defs>
-        <path d="M3 18L9 6l3 6 3-6 6 12" stroke="url(#ms-grad)" />
-      </svg>
-      <span class="text-sm font-semibold tracking-wide text-slate-900 dark:text-slate-100">Mullaney Strategic Systems</span>
-    </a>
-
-    <button class="inline-flex items-center gap-2 rounded-md px-3 py-2 text-slate-700 ring-1 ring-slate-300/60 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:text-slate-200 dark:ring-slate-600 dark:hover:bg-slate-800 md:hidden" aria-controls="primary-menu" aria-expanded={mobileOpen} on:click={() => (mobileOpen = !mobileOpen)}>
-      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <path d="M4 7h16M4 12h16M4 17h16" />
-      </svg>
-      <span class="text-sm">Menu</span>
-    </button>
-
-    <ul id="primary-menu" class="hidden items-center gap-6 md:flex">
-      {#each navItems as item}
-        <li>
-          <a href={item.href} class="text-sm font-medium text-slate-700 hover:text-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:text-slate-200 dark:hover:text-cyan-300">{item.label}</a>
-        </li>
-      {/each}
-    </ul>
-  </nav>
-
-  {#if mobileOpen}
-    <div class="md:hidden" role="dialog" aria-modal="true">
-      <div class="border-t border-slate-200/60 bg-white px-4 py-3 dark:border-slate-700/40 dark:bg-slate-900">
-        <ul class="space-y-2" on:click={closeMobile}>
-          {#each navItems as item}
-            <li>
-              <a href={item.href} class="block rounded-md px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 dark:text-slate-100 dark:hover:bg-slate-800">{item.label}</a>
-            </li>
-          {/each}
-        </ul>
-      </div>
-    </div>
-  {/if}
-</header>
-
-<main id="opening" class="isolate">
-  <!-- Decorative background (CSS-based, no SVG) -->
-  <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-    <div class="absolute -top-24 left-1/2 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-gradient-to-tr from-cyan-300/40 via-sky-300/20 to-blue-300/30 blur-3xl dark:from-cyan-400/20 dark:via-sky-400/10 dark:to-blue-400/20 animate-[fade-in_0.8s_ease-out_0.05s_both]"></div>
-    <div class="absolute bottom-[-8rem] right-[-6rem] h-[28rem] w-[28rem] rounded-full bg-gradient-to-tr from-blue-300/30 via-indigo-300/20 to-sky-300/20 blur-3xl dark:from-blue-400/10 dark:via-indigo-400/10 dark:to-sky-400/10"></div>
-  </div>
 
   <!-- Hero / Opening -->
-  <section id="opening" class="mx-auto max-w-7xl px-4 pb-12 pt-16 sm:px-6 md:pb-20 md:pt-24 lg:px-8">
+  <section class="mx-auto max-w-7xl px-4 pb-12 pt-16 sm:px-6 md:pb-20 md:pt-24 lg:px-8">
     <div class="grid items-center gap-10 md:grid-cols-2">
       <div>
         <h1 class="text-pretty text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl dark:text-slate-50 animate-[fade-up_0.6s_ease-out_0.05s_both]">
@@ -490,7 +513,7 @@
                 : 'inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 bg-slate-100 text-slate-700 ring-slate-300 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600 dark:hover:bg-slate-700'
             }
             aria-pressed={selectedTag === null}
-            on:click={() => toggleTag(null)}
+            onclick={() => toggleTag(null)}
           >
             All
           </button>
@@ -502,7 +525,7 @@
                   : 'inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 bg-slate-100 text-slate-700 ring-slate-300 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600 dark:hover:bg-slate-700'
               }
               aria-pressed={selectedTag === tag}
-              on:click={() => toggleTag(tag)}
+              onclick={() => toggleTag(tag)}
             >
               {tag}
             </button>
@@ -577,6 +600,12 @@
               </div>
               <div class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
                 <svg class="h-5 w-5 text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <a class="font-medium hover:text-cyan-700 dark:hover:text-cyan-300 underline-offset-4 hover:underline" href="tel:4434405299">443-440-5299</a>
+              </div>
+              <div class="flex items-center gap-3 text-slate-700 dark:text-slate-200">
+                <svg class="h-5 w-5 text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                   <path d="M19.5 10.5c0 4.5-7.5 10.5-7.5 10.5S4.5 15 4.5 10.5a7.5 7.5 0 1 1 15 0z"/>
                   <circle cx="12" cy="10.5" r="2.5"/>
                 </svg>
@@ -585,59 +614,86 @@
             </div>
 
             <div class="mt-8">
-              <a href="#opening" class="inline-flex items-center gap-2 rounded-md bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-black/10 hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white">
-                Learn more
+              <a href="https://mullaneystrategicsystems.zoom.us/zbook/d/9libhoia/mullaney-strategic-systems-consultation" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-black/10 hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white">
+                Book a consultation
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
           </div>
 
-          <!-- Right: simple email form (mailto) -->
+          <!-- Right: simple email form -->
           <div class="relative border-t border-slate-200/70 p-8 sm:p-10 lg:p-12 md:border-l md:border-t-0 dark:border-slate-700/60">
-            <form class="space-y-4" method="GET" action="mailto:samuel@mullaneystrategicsystems.com" aria-labelledby="contact-heading">
-              <h3 id="contact-heading" class="text-xl font-semibold text-slate-900 dark:text-slate-50">Send a message</h3>
-              <p class="text-sm text-slate-600 dark:text-slate-300">Prefer email? Use this quick form and your email client will open with your message.</p>
-
-              <div>
-                <label for="name" class="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">Name</label>
-                <input id="name" name="subject" type="text" placeholder="Your name" class="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none ring-0 transition placeholder:text-slate-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100" />
-              </div>
-
-              <div>
-                <label for="email" class="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">Email</label>
-                <input id="email" name="cc" type="email" placeholder="you@example.com" class="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100" />
-              </div>
-
-              <div>
-                <label for="message" class="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">Message</label>
-                <textarea id="message" name="body" rows="4" placeholder="Tell us a bit about your environment and goals..." class="w-full resize-y rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"></textarea>
-              </div>
-
-              <div class="pt-2">
-                <button type="submit" class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-cyan-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-cyan-700/20 hover:bg-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500">
-                  Email us
+            {#if formStatus?.success}
+              <div class="flex h-full flex-col items-center justify-center text-center space-y-4">
+                <div class="rounded-full bg-emerald-100 p-3 dark:bg-emerald-900/30">
+                  <svg class="h-8 w-8 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-slate-900 dark:text-slate-50">Message sent!</h3>
+                <p class="text-slate-600 dark:text-slate-300">Thanks for reaching out. We'll get back to you soon.</p>
+                <button 
+                  onclick={() => formStatus = null}
+                  class="text-sm font-medium text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300"
+                >
+                  Send another message
                 </button>
               </div>
+            {:else}
+              <form 
+                class="space-y-4" 
+                method="POST" 
+                use:enhance={handleEnhance}
+                aria-labelledby="contact-heading"
+              >
+                <h3 id="contact-heading" class="text-xl font-semibold text-slate-900 dark:text-slate-50">Send a message</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Fill out the form below and we'll be in touch.</p>
 
-              <p class="text-xs text-slate-500 dark:text-slate-400">We usually respond within one business day.</p>
-            </form>
+                {#if formStatus?.success === false}
+                  <div class="rounded-md bg-red-50 p-3 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+                    {formStatus.message}
+                  </div>
+                {/if}
+
+                <div>
+                  <label for="name" class="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">Name</label>
+                  <input id="name" name="name" type="text" required placeholder="Your name" class="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none ring-0 transition placeholder:text-slate-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100" />
+                </div>
+
+                <div>
+                  <label for="email" class="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">Email</label>
+                  <input id="email" name="email" type="email" required placeholder="you@example.com" class="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100" />
+                </div>
+
+                <div>
+                  <label for="message" class="mb-1 block text-sm font-medium text-slate-700 dark:text-slate-200">Message</label>
+                  <textarea id="message" name="message" rows="4" required placeholder="Tell us a bit about your environment and goals..." class="w-full resize-y rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"></textarea>
+                </div>
+
+                <div 
+                  bind:this={turnstileContainer}
+                ></div>
+
+                <div class="pt-2">
+                  <button 
+                    type="submit" 
+                    disabled={!turnstileToken || isSubmitting} 
+                    class="inline-flex w-full items-center justify-center gap-2 rounded-md bg-cyan-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-cyan-700/20 hover:bg-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {#if isSubmitting}
+                      Sending...
+                    {:else}
+                      Send message
+                    {/if}
+                  </button>
+                </div>
+
+                <p class="text-xs text-slate-500 dark:text-slate-400">We usually respond within one business day.</p>
+              </form>
+            {/if}
           </div>
         </div>
       </div>
     </div>
   </section>
-</main>
-
-<footer class="border-t border-slate-200/60 bg-white py-8 dark:border-slate-700/40 dark:bg-slate-950">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
-      <p class="text-sm text-slate-500 dark:text-slate-400">© {new Date().getFullYear()} Mullaney Strategic Systems. All rights reserved.</p>
-      <a href="#opening" class="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:text-slate-300 dark:hover:text-cyan-300">
-        Back to top
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5m0 0l-7 7m7-7l7 7"/></svg>
-      </a>
-    </div>
-  </div>
-  <svg aria-hidden="true" class="pointer-events-none absolute bottom-0 left-1/2 -z-10 h-48 w-[120%] -translate-x-1/2 blur-3xl" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="footer-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#22d3ee" stop-opacity="0.15"/><stop offset="100%" stop-color="#38bdf8" stop-opacity="0.05"/></linearGradient></defs><ellipse cx="300" cy="100" rx="280" ry="80" fill="url(#footer-grad)"/></svg>
-</footer>
 

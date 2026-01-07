@@ -6,6 +6,11 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  @apply overflow-x-hidden;
+}
+
 body {
   /* Soft layered background that works in light and dark themes */
   background-image:
