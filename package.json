@@ -20,7 +20,8 @@
 		"!dist/**/*.spec.*"
 	],
 	"sideEffects": [
-		"**/*.css"
+		"**/*.css",
+		".svelte-kit/output/server/**/*.js"
 	],
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
