@@ -124,146 +124,146 @@
   };
 
   const stackItems: StackItem[] = [
-      {
-          title: 'Identity Access Management',
-          vendor: 'Cisco Duo',
-          desc: 'Cisco Duo delivers enterprise-grade identity and access management by acting as a centralized cloud-based identity store through Duo Directory and enforcing strong access controls at the application layer. Duo Directory consolidates and manages user identities without requiring traditional directory infrastructure, while Duo applies multi-factor authentication, device trust checks, and adaptive access policies. Together, they ensure that only verified users on secure, compliant devices can access business applications, significantly reducing credential-based attacks within SMB and financial environments.',
-          color: 'cyan',
-          tags: ['Identity']
-      },
-      {
-          title: 'Privileged Access Management',
-          vendor: 'Evo Security',
-          desc: 'Evo Security provides centralized privileged access management that controls, monitors, and restricts administrative permissions. Evo enforces least-privilege access and records sensitive admin actions, reducing the risk of unauthorized system changes or credential compromise in environments handling financial and client data.',
-          color: 'amber',
-          tags: ['Identity']
-      },
-      {
-          title: 'Password Management',
-          vendor: '1Password',
-          desc: '1Password offers secure, encrypted vaults for storing organizational credentials, documents, and shared secrets. 1Password strengthens password hygiene, eliminates unsafe sharing practices, and provides breach monitoring to protect against credential theft—the most common cause of unauthorized access.',
-          color: 'emerald',
-          tags: ['Identity']
-      },
-      {
-          title: 'Enhanced Email Security',
-          vendor: 'Avanan',
-          desc: 'Avanan delivers advanced cloud-native email security using API-level analysis to detect phishing, malware, spoofing, and Business Email Compromise. Avanan protects Microsoft 365 and Google Workspace from sophisticated threats by identifying malicious activity inside the inbox where traditional gateways cannot see.',
-          color: 'violet',
-          tags: ['Cloud']
-      },
-      {
-          title: 'DMARC / SPF / DKIM',
-          vendor: 'Avanan',
-          desc: 'Avanan manages DMARC, SPF, and DKIM configurations to authenticate outbound messages and prevent domain spoofing. Avanan ensures email integrity and protects clients, partners, and staff from impersonation-based fraud that frequently targets financial and insurance organizations.',
-          color: 'sky',
-          tags: ['Cloud']
-      },
-      {
-          title: 'Security Awareness Training',
-          vendor: 'Ninjio',
-          desc: 'Ninjio provides engaging, story-driven cybersecurity training and phishing simulations that build a culture of awareness. Ninjio educates employees on modern threats and empowers them to recognize and report suspicious activity, significantly reducing human error across the organization.',
-          color: 'blue',
-          tags: ['Training']
-      },
-      {
-          title: 'Cloud Application Security',
-          vendor: 'Avanan & CrowdStrike',
-          desc: 'Avanan delivers SaaS-native security for Microsoft 365, Google Workspace, and collaboration tools by inspecting email, file sharing, and third-party integrations for phishing, malware, risky apps, and misconfigurations. CrowdStrike complements this by monitoring identity and endpoint telemetry for signs of account takeover, data exfiltration, and lateral movement into SaaS platforms, giving SMBs full-stack protection across users, devices, and cloud services.',
-          color: 'indigo',
-          tags: ['Cloud', 'Identity']
-      },
-      {
-          title: 'Identity Threat Detection & Response',
-          vendor: 'CrowdStrike & Cisco',
-          desc: 'CrowdStrike ITDR focuses on detecting and responding to identity-based threats by analyzing authentication patterns, privilege changes, and risky behavior across Active Directory, Entra ID, and other identity stores. Cisco Identity Intelligence enriches this by correlating identity, device, and network signals from Cisco’s security stack, flagging anomalous access, exposed accounts, and policy violations so organizations can quickly contain identity-driven attacks.',
-          color: 'fuchsia',
-          tags: ['Identity']
-      },
-      {
-          title: 'Cloud Workspace Backups',
-          vendor: 'NinjaOne',
-          desc: 'NinjaOne delivers automated, immutable SaaS backups for Microsoft 365 and Google Workspace, ensuring critical cloud data remains recoverable in cases of ransomware, accidental deletion, or configuration loss. NinjaOne safeguards business continuity for organizations relying heavily on cloud platforms.',
-          color: 'teal',
-          tags: ['Cloud']
-      },
-      {
-          title: 'Next Generation Antivirus',
-          vendor: 'CrowdStrike',
-          desc: 'CrowdStrike Falcon Prevent uses machine learning and behavioral analytics to block advanced malware, ransomware, and zero-day threats. CrowdStrike Prevent offers superior protection compared to traditional signature-based antivirus and is essential for securing modern distributed workforces.',
-          color: 'rose',
-          tags: ['Endpoint']
-      },
-      {
-          title: 'Endpoint Detection & Response',
-          vendor: 'CrowdStrike',
-          desc: 'CrowdStrike Falcon Insight provides enterprise-grade Endpoint Detection and Response with real-time monitoring, behavioral analytics, and automated containment. CrowdStrike enables rapid detection of intrusions and isolates compromised devices before attackers can escalate privileges or exfiltrate data.',
-          color: 'pink',
-          tags: ['Endpoint']
-      },
-      {
-          title: 'Managed Detection & Response',
-          vendor: 'CrowdStrike',
-          desc: 'CrowdStrike Falcon Complete delivers 24/7 managed detection and response operated by expert analysts who monitor, investigate, and contain threats on your behalf. CrowdStrike’s team provides enterprise-level protection for SMBs lacking internal SOC capabilities.',
-          color: 'red',
-          tags: ['Endpoint']
-      },
-      {
-          title: 'Managed Threat Hunting',
-          vendor: 'CrowdStrike',
-          desc: 'CrowdStrike Falcon Overwatch performs proactive threat hunting to identify stealthy adversaries who evade automated detection. CrowdStrike analysts look for advanced attack techniques, suspicious behaviors, and hidden compromises, strengthening an organization’s resilience against sophisticated intruders.',
-          color: 'orange',
-          tags: ['Endpoint']
-      },
-      {
-          title: 'Exposure Management',
-          vendor: 'CrowdStrike',
-          desc: 'CrowdStrike Falcon Exposure Management provides continuous visibility into assets, vulnerabilities, and misconfigurations by unifying Falcon Spotlight and Falcon Discover with adversary-driven risk prioritization. This capability enables organizations to understand their true attack surface, identify the exposures most likely to be exploited, and systematically reduce risk across endpoints, applications, identities, and cloud workloads.',
-          color: 'lime',
-          tags: ['Endpoint']
-      },
-      {
-          title: 'Unified Event Logging',
-          vendor: 'CrowdStrike',
-          desc: 'CrowdStrike LogScale and Search Retention deliver unified logging, long-term retention, and SIEM capabilities that support forensic investigations and compliance reporting. CrowdStrike provides deep visibility into identity, endpoint, and cloud activity, helping organizations trace incidents and validate security posture.',
-          color: 'slate',
-          tags: ['Cloud']
-      },
-      {
-          title: 'Remote Monitoring & Management',
-          vendor: 'NinjaOne',
-          desc: 'NinjaOne offers centralized remote monitoring and management that automates maintenance, enforces security configurations, and monitors system health. NinjaOne improves operational efficiency, reduces misconfigurations, and ensures consistent security standards across all managed endpoints.',
-          color: 'cyan',
-          tags: ['Endpoint']
-      },
-      {
-          title: 'Patching',
-          vendor: 'CrowdStrike & NinjaOne',
-          desc: 'NinjaOne automates OS and application patch deployment with policy-based scheduling, testing, and reporting across servers and workstations. CrowdStrike Falcon for IT adds real-time asset visibility, missing-patch detection, and remote remediation for stubborn or high-risk endpoints, ensuring critical vulnerabilities are closed quickly across the entire environment.',
-          color: 'emerald',
-          tags: ['Endpoint']
-      },
-      {
-          title: 'Endpoint & Server Backups',
-          vendor: 'NinjaOne',
-          desc: 'NinjaOne endpoint backups provide reliable protection for servers and workstations through scheduled backups, version control, and fast restore options. NinjaOne ensures organizations can recover quickly from data loss, ransomware, or hardware failure, supporting continuity for financial operations.',
-          color: 'violet',
-          tags: ['Endpoint']
-      },
-      {
-          title: 'Network Management',
-          vendor: 'Ubiquiti UniFi',
-          desc: 'Ubiquiti UniFi delivers centralized management of wired and wireless networks with VLAN segmentation, secure Wi-Fi policies, device profiling, and intrusion detection. UniFi simplifies network governance and strengthens perimeter defense by limiting lateral movement opportunities.',
-          color: 'sky',
-          tags: ['Network']
-      },
-      {
-          title: 'Secure Service Edge',
-          vendor: 'Cisco Umbrella',
-          desc: 'Cisco Umbrella provides DNS-layer security, secure web gateway, CASB, and cloud-delivered firewall controls to inspect and filter internet-bound traffic, while Cisco Secure Access extends this with Zero Trust Network Access and a unified client to broker secure, least-privilege access to private and SaaS applications. Together, they deliver a modern SASE/SSE architecture that protects remote and hybrid users without relying on legacy VPNs.',
-          color: 'blue',
-          tags: ['Network', 'Cloud']
-      }
+    {
+      title: 'Identity Access Management',
+      vendor: 'Cisco Duo',
+      desc: 'Cisco Duo serves as our cornerstone security-first identity directory and access control platform. It enables strong single sign-on for SaaS applications and endpoint access while enforcing multi-factor authentication, device trust, and adaptive access policies. By centralizing identity enforcement around security posture and risk, Duo ensures that only approved users on secure devices can access business systems.',
+      color: 'cyan',
+      tags: ['Identity']
+    },
+    {
+      title: 'Privileged Access Management',
+      vendor: 'Evo Security',
+      desc: 'Evo Security delivers centralized privileged access management to control and monitor administrative permissions. It enforces least-privilege access, secures elevated credentials, and records privileged actions for auditability. This reduces the risk of unauthorized system changes and limits the impact of compromised administrative accounts in sensitive environments.',
+      color: 'amber',
+      tags: ['Identity']
+    },
+    {
+      title: 'Password Management',
+      vendor: '1Password',
+      desc: '1Password provides secure, encrypted vaults for storing organizational credentials, documents, and shared secrets. It improves password hygiene through strong encryption, controlled sharing, and breach monitoring. By eliminating unsafe credential practices, 1Password helps prevent account compromise, which remains one of the most common attack vectors.',
+      color: 'emerald',
+      tags: ['Identity']
+    },
+    {
+      title: 'Email Security',
+      vendor: 'Avanan',
+      desc: 'Avanan delivers cloud-native email security using API-level analysis to detect phishing, malware, spoofing, and business email compromise. It inspects messages directly inside Microsoft 365 and Google Workspace inboxes. This approach allows Avanan to stop advanced threats that bypass traditional email gateways.',
+      color: 'violet',
+      tags: ['Cloud']
+    },
+    {
+      title: 'Email Authentication & Monitoring',
+      vendor: 'Avanan',
+      desc: 'Avanan manages DMARC, SPF, and DKIM configurations to authenticate outbound email and prevent domain spoofing. It identifies legitimate senders, improves authentication alignment, and supports enforcement readiness. This protects organizations from impersonation attacks that frequently target financial and insurance firms.',
+      color: 'sky',
+      tags: ['Cloud']
+    },
+    {
+      title: 'Security Awareness Training',
+      vendor: 'Ninjio',
+      desc: 'Ninjio provides story-driven security awareness training combined with phishing simulations. It educates employees on modern attack techniques and reinforces safe behavior through engaging content. This reduces human error and strengthens the organization’s first line of defense against social engineering attacks.',
+      color: 'blue',
+      tags: ['Training']
+    },
+    {
+      title: 'Cloud Workspace Security',
+      vendor: 'Avanan & CrowdStrike',
+      desc: 'Avanan secures Microsoft 365 and Google Workspace by inspecting email, file sharing, and third-party integrations for phishing and malware. CrowdStrike Falcon Shield adds SaaS security posture management by discovering SaaS applications, monitoring configurations, and detecting risky OAuth permissions. Together, they reduce data exposure and identity risk across cloud collaboration platforms.',
+      color: 'indigo',
+      tags: ['Cloud', 'Identity']
+    },
+    {
+      title: 'Identity Threat Detection & Response',
+      vendor: 'CrowdStrike & Cisco Duo',
+      desc: 'CrowdStrike Falcon Identity Protection detects identity-based attacks by analyzing authentication behavior, privilege changes, and adversary techniques across hybrid identity environments. Cisco Duo complements this by enforcing access controls and providing identity security signals tied to device trust and policy enforcement. This combination enables faster detection and containment of account takeover attempts.',
+      color: 'fuchsia',
+      tags: ['Identity']
+    },
+    {
+      title: 'Cloud Workspace Backups',
+      vendor: 'NinjaOne',
+      desc: 'NinjaOne provides automated and immutable backups for Microsoft 365 and Google Workspace. It protects email, files, and collaboration data from accidental deletion, ransomware, or configuration errors. This ensures organizations can quickly restore critical cloud data and maintain business continuity.',
+      color: 'teal',
+      tags: ['Cloud']
+    },
+    {
+      title: 'Next Generation Antivirus',
+      vendor: 'CrowdStrike',
+      desc: 'CrowdStrike Falcon Prevent uses machine learning and behavioral analysis to stop malware, ransomware, and zero-day threats. It operates without traditional signatures and updates continuously from the cloud. This provides stronger protection for modern endpoints than legacy antivirus solutions.',
+      color: 'rose',
+      tags: ['Endpoint']
+    },
+    {
+      title: 'Endpoint Detection & Response',
+      vendor: 'CrowdStrike',
+      desc: 'CrowdStrike Falcon Insight delivers real-time endpoint detection and response through continuous monitoring and behavioral analytics. It enables rapid investigation and automated containment of compromised devices. This limits attacker movement and reduces the impact of endpoint intrusions.',
+      color: 'pink',
+      tags: ['Endpoint']
+    },
+    {
+      title: 'Managed Detection & Response',
+      vendor: 'CrowdStrike',
+      desc: 'CrowdStrike Falcon Complete provides fully managed detection and response operated by CrowdStrike analysts around the clock. The service includes investigation, remediation, and threat containment on behalf of the customer. This delivers enterprise-level security outcomes for organizations without an internal SOC.',
+      color: 'red',
+      tags: ['Endpoint']
+    },
+    {
+      title: 'Managed Threat Hunting',
+      vendor: 'CrowdStrike',
+      desc: 'CrowdStrike Falcon Overwatch performs proactive threat hunting to uncover stealthy attackers that evade automated defenses. Analysts search for advanced techniques and suspicious behaviors across the environment. This increases resilience against targeted and sophisticated threats.',
+      color: 'orange',
+      tags: ['Endpoint']
+    },
+    {
+      title: 'Exposure Management',
+      vendor: 'CrowdStrike',
+      desc: 'CrowdStrike Falcon Exposure Management provides visibility into assets, vulnerabilities, and misconfigurations across endpoints and workloads. It prioritizes risk based on adversary behavior rather than raw vulnerability counts. This allows organizations to reduce their most likely attack paths first.',
+      color: 'lime',
+      tags: ['Endpoint']
+    },
+    {
+      title: 'Unified Event Logging',
+      vendor: 'CrowdStrike',
+      desc: 'CrowdStrike Next-Gen SIEM and Search Retention deliver centralized log collection, long-term retention, and advanced search capabilities. They unify endpoint, identity, and cloud telemetry in a single platform. This supports investigations, compliance reporting, and incident response.',
+      color: 'slate',
+      tags: ['Cloud']
+    },
+    {
+      title: 'Remote Monitoring & Management',
+      vendor: 'NinjaOne',
+      desc: 'NinjaOne provides centralized remote monitoring and management for servers and workstations. It automates maintenance tasks, monitors system health, and enforces configuration standards. This improves operational efficiency while reducing security gaps caused by misconfiguration.',
+      color: 'cyan',
+      tags: ['Endpoint']
+    },
+    {
+      title: 'Patching',
+      vendor: 'CrowdStrike & NinjaOne',
+      desc: 'NinjaOne automates operating system and application patching with policy-based scheduling and reporting. CrowdStrike Falcon for IT adds real-time visibility into missing patches and risky assets. Together, they ensure vulnerabilities are addressed quickly and consistently.',
+      color: 'emerald',
+      tags: ['Endpoint']
+    },
+    {
+      title: 'Endpoint & Server Backups',
+      vendor: 'NinjaOne',
+      desc: 'NinjaOne provides reliable backups for endpoints and servers through scheduled snapshots and versioned recovery. It supports fast restoration after ransomware, hardware failure, or accidental data loss. This protects operational continuity for critical systems.',
+      color: 'violet',
+      tags: ['Endpoint']
+    },
+    {
+      title: 'Network Management',
+      vendor: 'Ubiquiti UniFi',
+      desc: 'Ubiquiti UniFi offers centralized management for wired and wireless networks. It supports VLAN segmentation, secure Wi-Fi policies, and device monitoring across all locations. This strengthens network governance and limits lateral movement within the environment.',
+      color: 'sky',
+      tags: ['Network']
+    },
+    {
+      title: 'Secure Service Edge',
+      vendor: 'Cisco Umbrella',
+      desc: 'Cisco Umbrella provides DNS-layer security, secure web gateway, CASB, and cloud-delivered firewall controls for internet-bound traffic. Cisco Secure Access extends this with zero trust network access to private and SaaS applications. Together, they deliver modern SASE and SSE protection without legacy VPNs.',
+      color: 'blue',
+      tags: ['Network', 'Cloud']
+    }
   ];
 
   // Tag filtering state for Security Stack

@@ -50,7 +50,7 @@
   {#if mobileOpen}
     <div class="md:hidden" role="dialog" aria-modal="true">
       <div class="border-t border-slate-200/60 bg-white px-4 py-3 dark:border-slate-700/40 dark:bg-slate-900">
-        <ul class="space-y-2" onclick={closeMobile} onkeydown={(e) => e.key === 'Enter' && closeMobile()} role="presentation">
+        <ul class="space-y-2 cursor-pointer" onclick={closeMobile} onkeydown={(e) => e.key === 'Enter' && closeMobile()} role="presentation">
           {#each navItems as item}
             <li>
               <a href={item.href} class="block rounded-md px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-50 dark:text-slate-100 dark:hover:bg-slate-800">{item.label}</a>
@@ -63,7 +63,6 @@
 </header>
 
 <main id="opening" class="relative isolate flex min-h-screen flex-col">
-  <!-- Decorative background (Moved from +page.svelte) -->
   <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
     <div class="absolute -top-24 left-1/2 h-[32rem] w-full max-w-5xl -translate-x-1/2 rounded-full bg-gradient-to-tr from-cyan-300/40 via-sky-300/20 to-blue-300/30 blur-3xl dark:from-cyan-400/20 dark:via-sky-400/10 dark:to-blue-400/20 animate-[fade-in_0.8s_ease-out_0.05s_both]"></div>
     <div class="absolute bottom-[-8rem] right-[-6rem] h-[28rem] w-full max-w-4xl rounded-full bg-gradient-to-tr from-blue-300/30 via-indigo-300/20 to-sky-300/20 blur-3xl dark:from-blue-400/10 dark:via-indigo-400/10 dark:to-sky-400/10"></div>

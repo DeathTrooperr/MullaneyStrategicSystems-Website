@@ -29,6 +29,12 @@ body {
   }
 }
 
+/* Ensure all buttons and links have a pointer cursor */
+button, 
+a {
+  cursor: pointer;
+}
+
 /* Opening animations */
 @keyframes fade-up {
   from {
