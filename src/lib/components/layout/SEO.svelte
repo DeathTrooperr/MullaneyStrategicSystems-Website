@@ -12,7 +12,7 @@
 
 	let {
 		title = common.companyName,
-		description = 'Professional IT services and strategic systems consulting.',
+		description = 'We deliver security-first managed services for financial and insurance organizations, focused on reducing risk, maintaining compliance, and ensuring accountability across identity, endpoints, cloud, and network environments.',
 		image = '/favicon.svg', // Fallback to favicon if og-image is missing
 		canonical = page.url.href,
 		type = 'website'
@@ -22,23 +22,24 @@
 </script>
 
 <svelte:head>
-	<!-- Primary Meta Tags -->
 	<title>{fullTitle}</title>
-	<meta name="title" content={fullTitle} />
+
 	<meta name="description" content={description} />
+
 	<link rel="canonical" href={canonical} />
 
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content={type} />
-	<meta property="og:url" content={page.url.href} />
+	<!-- Open Graph -->
+	<meta property="og:type" content={type ?? 'website'} />
+	<meta property="og:url" content={canonical} />
 	<meta property="og:title" content={fullTitle} />
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content={new URL(image, page.url.origin).href} />
+	<meta property="og:site_name" content={fullTitle} />
+	<meta property="og:locale" content={'en_US'} />
 
 	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content={page.url.href} />
-	<meta property="twitter:title" content={fullTitle} />
-	<meta property="twitter:description" content={description} />
-	<meta property="twitter:image" content={new URL(image, page.url.origin).href} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={fullTitle} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={new URL(image, page.url.origin).href} />
 </svelte:head>
