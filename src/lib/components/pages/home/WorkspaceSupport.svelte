@@ -10,10 +10,10 @@
 	<div class="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
 		<header class="max-w-2xl mx-auto text-center">
 			<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
-				{home.sections.unifiedCloudGovernance.title}
+				{home.sections.workspaceSupport.title}
 			</h2>
 			<p class="mt-3 text-slate-600 dark:text-slate-300">
-				{home.sections.unifiedCloudGovernance.subtitle}
+				{home.sections.workspaceSupport.subtitle}
 			</p>
 		</header>
 		<div class="mt-12 gap-8 lg:grid-cols-3 lg:items-stretch grid">
@@ -26,19 +26,19 @@
 						<div class="bg-slate-50 p-2 dark:bg-slate-800 rounded-full">
 							<img
 								src="/imgs/google.png"
-								alt="{home.sections.unifiedCloudGovernance.providers.google.title} logo"
+								alt="{home.sections.workspaceSupport.providers.google.title} logo"
 								class="h-6 w-6 object-contain"
 								loading="lazy"
 							/>
 						</div>
 						<h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">
-							{home.sections.unifiedCloudGovernance.providers.google.title}
+							{home.sections.workspaceSupport.providers.google.title}
 						</h3>
 					</div>
 
 					<div class="mt-6 border-slate-100 pt-6 dark:border-slate-800 border-t">
 						<ul class="space-y-4 text-sm text-slate-700 dark:text-slate-200">
-							{#each home.sections.unifiedCloudGovernance.providers.google.features as feature}
+							{#each home.sections.workspaceSupport.providers.google.features as feature}
 								<li class="gap-3 flex items-start">
 									<svg
 										class="mt-1 h-4 w-4 text-cyan-600 dark:text-cyan-400 flex-none"
@@ -71,19 +71,19 @@
 						<div class="bg-slate-50 p-2 dark:bg-slate-800 rounded-full">
 							<img
 								src="/imgs/microsoft365.png"
-								alt="{home.sections.unifiedCloudGovernance.providers.microsoft.title} logo"
+								alt="{home.sections.workspaceSupport.providers.microsoft.title} logo"
 								class="h-6 w-6 object-contain"
 								loading="lazy"
 							/>
 						</div>
 						<h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">
-							{home.sections.unifiedCloudGovernance.providers.microsoft.title}
+							{home.sections.workspaceSupport.providers.microsoft.title}
 						</h3>
 					</div>
 
 					<div class="mt-6 border-slate-100 pt-6 dark:border-slate-800 border-t">
 						<ul class="space-y-4 text-sm text-slate-700 dark:text-slate-200">
-							{#each home.sections.unifiedCloudGovernance.providers.microsoft.features as feature}
+							{#each home.sections.workspaceSupport.providers.microsoft.features as feature}
 								<li class="gap-3 flex items-start">
 									<svg
 										class="mt-1 h-4 w-4 text-cyan-600 dark:text-cyan-400 flex-none"
@@ -122,13 +122,13 @@
 							/>
 						</div>
 						<h3 class="text-xl font-bold text-slate-900 dark:text-slate-50">
-							{home.sections.unifiedCloudGovernance.providers.hybrid.title}
+							{home.sections.workspaceSupport.providers.hybrid.title}
 						</h3>
 					</div>
 
 					<div class="mt-6 border-slate-100 pt-6 dark:border-slate-800 border-t">
 						<ul class="space-y-4 text-sm text-slate-700 dark:text-slate-200">
-							{#each home.sections.unifiedCloudGovernance.providers.hybrid.features as feature}
+							{#each home.sections.workspaceSupport.providers.hybrid.features as feature}
 								<li class="gap-3 flex items-start">
 									<svg
 										class="mt-1 h-4 w-4 text-cyan-600 dark:text-cyan-400 flex-none"

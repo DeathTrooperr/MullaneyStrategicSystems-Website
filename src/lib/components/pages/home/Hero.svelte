@@ -10,7 +10,7 @@
 			<h1
 				class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl dark:text-slate-50 animate-[fade-up_0.6s_ease-out_0.05s_both] text-pretty"
 			>
-				{home.hero.title}
+				{home.hero.title},
 				<span
 					class="from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-400 bg-gradient-to-r bg-clip-text text-transparent"
 					>{home.hero.titleAccent}</span

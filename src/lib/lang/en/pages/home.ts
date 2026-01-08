@@ -1,9 +1,9 @@
+import {common} from "$lib/lang/en/common.js";
 export const home = {
 	hero: {
-		title: 'Mullaney Strategic Systems,',
+		title: common.companyName,
 		titleAccent: 'Security done right.',
-		subtitle:
-			'We deliver security-first managed services for financial and insurance organizations, focused on reducing risk, maintaining compliance, and ensuring accountability across identity, endpoints, cloud, and network environments.',
+		subtitle: common.companyDescription,
 		oversight: {
 			title: 'Operational Oversight',
 			items: [
@@ -17,8 +17,8 @@ export const home = {
 		}
 	},
 	sections: {
-		unifiedCloudGovernance: {
-			title: 'Unified Cloud Governance',
+		workspaceSupport: {
+			title: 'Supported Workspaces',
 			subtitle:
 				'We secure leading cloud workspace environments using native API integrations, enforcing consistent policy and visibility across cloud-only and hybrid infrastructures.',
 			providers: {

@@ -9,6 +9,7 @@ export const common = {
 		menu: 'Menu'
 	},
 	companyName: 'Mullaney Strategic Systems',
+	companyDescription: 'We deliver security-first managed services for financial and insurance organizations, focused on reducing risk, maintaining compliance, and ensuring accountability across identity, endpoints, cloud, and network environments.',
 	buttons: {
 		talkToExpert: 'Talk to an expert',
 		viewPlans: 'View plans',
@@ -23,7 +24,7 @@ export const common = {
 		emailSupport: 'Email support'
 	},
 	footer: {
-		copyright: '© {year} Mullaney Strategic Systems. All rights reserved.',
+		copyright: '© {year} Mullaney Strategic Systems LLC. All rights reserved.',
 		smsPrivacyPolicy: 'SMS Privacy Policy'
 	},
 	contactInfo: {

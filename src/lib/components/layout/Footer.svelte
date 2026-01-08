@@ -7,12 +7,12 @@
 >
 	<div class="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto">
 		<div class="gap-4 sm:flex-row flex flex-col items-center justify-between">
-			<p class="text-sm text-slate-50 dark:text-slate-400 sm:text-left text-center">
+			<p class="text-sm text-slate-600 dark:text-slate-400 sm:text-left text-center">
 				{common.footer.copyright.replace('{year}', new Date().getFullYear().toString())}
 			</p>
 			<a
 				href="/sms"
-				class="text-xs text-slate-400 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400"
+				class="text-xs text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400"
 				>{common.footer.smsPrivacyPolicy}</a
 			>
 		</div>
