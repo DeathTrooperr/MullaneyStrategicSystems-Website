@@ -1,7 +1,12 @@
 <script lang="ts">
+	import SEO from '$lib/components/layout/SEO.svelte';
 	import { page } from '$app/state';
 	import { common } from '$lib/lang/en/common';
+
+	const errorTitle = page.status === 404 ? common.errors.pageNotFound : common.errors.genericError;
 </script>
+
+<SEO title={errorTitle} />
 
 <div
 	class="px-6 py-24 sm:py-32 lg:px-8 relative isolate flex min-h-[calc(100vh-16rem)] flex-col items-center justify-center"

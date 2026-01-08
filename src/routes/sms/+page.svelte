@@ -1,7 +1,10 @@
 <script lang="ts">
+	import SEO from '$lib/components/layout/SEO.svelte';
 	import { sms } from '$lib/lang/en/pages/sms';
 	const lastUpdated = 'January 8, 2026'; // Using current date as last updated
 </script>
+
+<SEO title={sms.title} />
 
 <div class="max-w-4xl px-4 py-16 sm:px-6 lg:px-8 mx-auto">
 	<article class="prose prose-slate dark:prose-invert lg:prose-lg mx-auto">
