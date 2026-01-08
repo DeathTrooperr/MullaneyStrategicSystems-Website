@@ -2,10 +2,6 @@
   const lastUpdated = "January 8, 2026"; // Using current date as last updated
 </script>
 
-<svelte:head>
-  <title>SMS Privacy Policy | Mullaney Strategic Systems</title>
-</svelte:head>
-
 <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
   <article class="prose prose-slate dark:prose-invert lg:prose-lg mx-auto">
     <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl text-center">SMS / MMS Privacy Policy</h1>

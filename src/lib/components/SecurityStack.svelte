@@ -134,133 +134,133 @@
     {
       title: 'Privileged Access Management',
       vendor: 'Evo Security',
-      desc: 'Evo Security delivers centralized privileged access management to control and monitor administrative permissions. It enforces least-privilege access, secures elevated credentials, and records privileged actions for auditability. This reduces the risk of unauthorized system changes and limits the impact of compromised administrative accounts in sensitive environments.',
+      desc: 'Evo Security provides centralized privileged access management to control and monitor administrative permissions. It enforces least-privilege access and secures elevated credentials with identity-based MFA for all administrative actions. By eliminating shared administrative accounts and providing granular oversight, Evo reduces the risk of unauthorized system changes and lateral movement.',
       color: 'amber',
       tags: ['Identity']
     },
     {
       title: 'Password Management',
       vendor: '1Password',
-      desc: '1Password provides secure, encrypted vaults for storing organizational credentials, documents, and shared secrets. It improves password hygiene through strong encryption, controlled sharing, and breach monitoring. By eliminating unsafe credential practices, 1Password helps prevent account compromise, which remains one of the most common attack vectors.',
+      desc: '1Password provides secure, encrypted vaults for managing organizational credentials, documents, and shared secrets. It enforces strong password hygiene through centralized policy management, secure credential sharing, and proactive breach monitoring. By eliminating unsafe storage practices and reusing weak passwords, 1Password reduces the risk of account compromise and credential-based attacks.',
       color: 'emerald',
       tags: ['Identity']
     },
     {
       title: 'Email Security',
       vendor: 'Avanan',
-      desc: 'Avanan delivers cloud-native email security using API-level analysis to detect phishing, malware, spoofing, and business email compromise. It inspects messages directly inside Microsoft 365 and Google Workspace inboxes. This approach allows Avanan to stop advanced threats that bypass traditional email gateways.',
+      desc: 'Avanan delivers cloud-native email security using API-level analysis to detect phishing, malware, and business email compromise inside the inbox. It leverages advanced AI to identify malicious intent and anomalous behavior that traditional gateways often miss. This approach prevents credential harvesting and financial fraud before they reach the user.',
       color: 'violet',
       tags: ['Cloud']
     },
     {
       title: 'Email Authentication & Monitoring',
       vendor: 'Avanan',
-      desc: 'Avanan manages DMARC, SPF, and DKIM configurations to authenticate outbound email and prevent domain spoofing. It identifies legitimate senders, improves authentication alignment, and supports enforcement readiness. This protects organizations from impersonation attacks that frequently target financial and insurance firms.',
+      desc: 'Avanan automates DMARC, SPF, and DKIM enforcement to authenticate outbound email and protect brand reputation. It provides continuous visibility into third-party sending services to ensure only authorized sources can send mail on behalf of the organization. This reduces the risk of domain spoofing and improves global email deliverability.',
       color: 'sky',
       tags: ['Cloud']
     },
     {
       title: 'Security Awareness Training',
       vendor: 'Ninjio',
-      desc: 'Ninjio provides story-driven security awareness training combined with phishing simulations. It educates employees on modern attack techniques and reinforces safe behavior through engaging content. This reduces human error and strengthens the organization’s first line of defense against social engineering attacks.',
+      desc: 'Ninjio delivers story-driven security awareness training combined with automated phishing simulations to reinforce safe digital habits. It educates employees on modern social engineering techniques through brief, high-impact episodes designed for executive and staff engagement. This reduces human-centric risk and strengthens the organization’s primary defensive layer.',
       color: 'blue',
       tags: ['Training']
     },
     {
       title: 'Cloud Workspace Security',
       vendor: 'Avanan & CrowdStrike',
-      desc: 'Avanan secures Microsoft 365 and Google Workspace by inspecting email, file sharing, and third-party integrations for phishing and malware. CrowdStrike Falcon Shield adds SaaS security posture management by discovering SaaS applications, monitoring configurations, and detecting risky OAuth permissions. Together, they reduce data exposure and identity risk across cloud collaboration platforms.',
+      desc: 'This integrated solution secures Microsoft 365 and Google Workspace by combining deep API-based email inspection with SaaS posture management. It identifies misconfigurations, monitors risky OAuth permissions, and detects malicious file sharing across cloud collaboration suites. By unifying visibility, it reduces data exposure and ensures consistent security policies across the cloud workspace.',
       color: 'indigo',
       tags: ['Cloud', 'Identity']
     },
     {
       title: 'Identity Threat Detection & Response',
       vendor: 'CrowdStrike & Cisco Duo',
-      desc: 'CrowdStrike Falcon Identity Protection detects identity-based attacks by analyzing authentication behavior, privilege changes, and adversary techniques across hybrid identity environments. Cisco Duo complements this by enforcing access controls and providing identity security signals tied to device trust and policy enforcement. This combination enables faster detection and containment of account takeover attempts.',
+      desc: 'CrowdStrike Falcon Identity Protection analyzes authentication behavior and privilege changes to detect identity-based attacks in real-time. When combined with Cisco Duo’s adaptive access policies, it enables automated step-up authentication or access blocking during suspicious events. This integrated approach stops account takeovers and prevents unauthorized access to critical systems.',
       color: 'fuchsia',
       tags: ['Identity']
     },
     {
       title: 'Cloud Workspace Backups',
       vendor: 'NinjaOne',
-      desc: 'NinjaOne provides automated and immutable backups for Microsoft 365 and Google Workspace. It protects email, files, and collaboration data from accidental deletion, ransomware, or configuration errors. This ensures organizations can quickly restore critical cloud data and maintain business continuity.',
+      desc: 'NinjaOne provides automated, immutable backups for Microsoft 365 and Google Workspace to protect against data loss and ransomware. It ensures that email, SharePoint, OneDrive, and Google Drive data are securely archived and independently recoverable. This guarantees business continuity and meets regulatory requirements for data retention and availability.',
       color: 'teal',
       tags: ['Cloud']
     },
     {
       title: 'Next Generation Antivirus',
       vendor: 'CrowdStrike',
-      desc: 'CrowdStrike Falcon Prevent uses machine learning and behavioral analysis to stop malware, ransomware, and zero-day threats. It operates without traditional signatures and updates continuously from the cloud. This provides stronger protection for modern endpoints than legacy antivirus solutions.',
+      desc: 'CrowdStrike Falcon Prevent uses machine learning and behavioral analysis to stop known malware and sophisticated zero-day attacks. It operates through a single lightweight agent that enforces protection without the performance impact or signature-dependency of legacy antivirus. This ensures endpoints remain secure against rapidly evolving threats, even when offline.',
       color: 'rose',
       tags: ['Endpoint']
     },
     {
       title: 'Endpoint Detection & Response',
       vendor: 'CrowdStrike',
-      desc: 'CrowdStrike Falcon Insight delivers real-time endpoint detection and response through continuous monitoring and behavioral analytics. It enables rapid investigation and automated containment of compromised devices. This limits attacker movement and reduces the impact of endpoint intrusions.',
+      desc: 'CrowdStrike Falcon Insight provides continuous visibility and response capabilities across the entire endpoint fleet. It records all relevant system activity to enable rapid forensic investigation and automated containment of detected threats. This reduces attacker dwell time and ensures that security incidents are identified and mitigated before they escalate.',
       color: 'pink',
       tags: ['Endpoint']
     },
     {
       title: 'Managed Detection & Response',
       vendor: 'CrowdStrike',
-      desc: 'CrowdStrike Falcon Complete provides fully managed detection and response operated by CrowdStrike analysts around the clock. The service includes investigation, remediation, and threat containment on behalf of the customer. This delivers enterprise-level security outcomes for organizations without an internal SOC.',
+      desc: 'CrowdStrike Falcon Complete delivers 24/7 managed detection and response, providing expert-led investigation and surgical remediation. The service acts as an extension of our security team, handling the full lifecycle of a threat from initial detection to final resolution. This ensures enterprise-grade security outcomes and continuous protection without the need for internal SOC operations.',
       color: 'red',
       tags: ['Endpoint']
     },
     {
       title: 'Managed Threat Hunting',
       vendor: 'CrowdStrike',
-      desc: 'CrowdStrike Falcon Overwatch performs proactive threat hunting to uncover stealthy attackers that evade automated defenses. Analysts search for advanced techniques and suspicious behaviors across the environment. This increases resilience against targeted and sophisticated threats.',
+      desc: 'CrowdStrike Falcon Overwatch provides proactive, human-led threat hunting to identify stealthy adversaries that bypass automated defenses. Specialized analysts monitor environment telemetry around the clock to uncover sophisticated attack patterns and emerging techniques. This provides an additional layer of security that ensures targeted attacks are identified in their earliest stages.',
       color: 'orange',
       tags: ['Endpoint']
     },
     {
       title: 'Exposure Management',
       vendor: 'CrowdStrike',
-      desc: 'CrowdStrike Falcon Exposure Management provides visibility into assets, vulnerabilities, and misconfigurations across endpoints and workloads. It prioritizes risk based on adversary behavior rather than raw vulnerability counts. This allows organizations to reduce their most likely attack paths first.',
+      desc: 'CrowdStrike Falcon Exposure Management provides continuous visibility into all assets, vulnerabilities, and potential attack paths. It prioritizes remediation efforts based on real-world adversary behavior and the criticality of the affected systems. This enables a risk-based approach to patching and configuration hardening that significantly reduces the organization’s attack surface.',
       color: 'lime',
       tags: ['Endpoint']
     },
     {
       title: 'Unified Event Logging',
       vendor: 'CrowdStrike',
-      desc: 'CrowdStrike Next-Gen SIEM and Search Retention deliver centralized log collection, long-term retention, and advanced search capabilities. They unify endpoint, identity, and cloud telemetry in a single platform. This supports investigations, compliance reporting, and incident response.',
+      desc: 'CrowdStrike Next-Gen SIEM provides centralized log management and long-term search retention for security telemetry across the environment. It unifies data from endpoints, identity providers, and cloud workloads to support rapid investigation and compliance auditing. This ensures that critical security events are preserved and remain accessible for incident response and regulatory review.',
       color: 'slate',
       tags: ['Cloud']
     },
     {
       title: 'Remote Monitoring & Management',
       vendor: 'NinjaOne',
-      desc: 'NinjaOne provides centralized remote monitoring and management for servers and workstations. It automates maintenance tasks, monitors system health, and enforces configuration standards. This improves operational efficiency while reducing security gaps caused by misconfiguration.',
+      desc: 'NinjaOne serves as our primary platform for centralized endpoint management, monitoring, and automated maintenance. It enforces configuration standards, tracks system health, and provides secure remote access for technical support and troubleshooting. This improves operational stability while ensuring that all systems remain compliant with security policies.',
       color: 'cyan',
       tags: ['Endpoint']
     },
     {
       title: 'Patching',
       vendor: 'CrowdStrike & NinjaOne',
-      desc: 'NinjaOne automates operating system and application patching with policy-based scheduling and reporting. CrowdStrike Falcon for IT adds real-time visibility into missing patches and risky assets. Together, they ensure vulnerabilities are addressed quickly and consistently.',
+      desc: 'This combined solution automates the distribution and verification of operating system and third-party application patches. It leverages NinjaOne’s orchestration capabilities with CrowdStrike’s vulnerability intelligence to prioritize and deploy critical security updates. This ensures that known vulnerabilities are remediated quickly to prevent exploitation.',
       color: 'emerald',
       tags: ['Endpoint']
     },
     {
       title: 'Endpoint & Server Backups',
       vendor: 'NinjaOne',
-      desc: 'NinjaOne provides reliable backups for endpoints and servers through scheduled snapshots and versioned recovery. It supports fast restoration after ransomware, hardware failure, or accidental data loss. This protects operational continuity for critical systems.',
+      desc: 'NinjaOne provides secure, image-based backups for servers and workstations to ensure rapid recovery from hardware failure or data corruption. It utilizes encrypted storage and automated verification to guarantee the integrity of every recovery point. This protects critical business data and minimizes downtime during operational disruptions.',
       color: 'violet',
       tags: ['Endpoint']
     },
     {
       title: 'Network Management',
       vendor: 'Ubiquiti UniFi',
-      desc: 'Ubiquiti UniFi offers centralized management for wired and wireless networks. It supports VLAN segmentation, secure Wi-Fi policies, and device monitoring across all locations. This strengthens network governance and limits lateral movement within the environment.',
+      desc: 'Ubiquiti UniFi provides centralized management for professional-grade wired and wireless network infrastructure. It enables secure VLAN segmentation, guest network isolation, and continuous monitoring of network performance and connected devices. This ensures a stable, high-performance network environment while enforcing strict access controls at the physical layer.',
       color: 'sky',
       tags: ['Network']
     },
     {
       title: 'Secure Service Edge',
       vendor: 'Cisco Umbrella',
-      desc: 'Cisco Umbrella provides DNS-layer security, secure web gateway, CASB, and cloud-delivered firewall controls for internet-bound traffic. Cisco Secure Access extends this with zero trust network access to private and SaaS applications. Together, they deliver modern SASE and SSE protection without legacy VPNs.',
+      desc: 'Cisco Umbrella and Secure Access provide a cloud-delivered security layer that protects users wherever they work. It enforces DNS-layer security, secure web gateway controls, and zero-trust network access to private applications and SaaS platforms. By moving security to the edge, it reduces the need for traditional VPNs while providing consistent protection against web-based threats.',
       color: 'blue',
       tags: ['Network', 'Cloud']
     }
@@ -326,9 +326,9 @@
           <div class="flex items-start gap-3">
             <!-- Logo -->
             <div class={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ring-1 ${c.bg} ${c.ring}`}>
-              <svg class={`h-6 w-6 ${c.text}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" role="img" aria-label={`${item.title} logo`}>
-                <path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z" />
-                <path d="M9 12l3 3 4-4" stroke-linecap="round" stroke-linejoin="round" />
+              <svg class={`h-6 w-6 ${c.text}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" role="img" aria-label={`${item.title} logo`}>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <div class="min-w-0">

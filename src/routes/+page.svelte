@@ -127,7 +127,7 @@
           Mullaney Strategic Systems, <span class="text-transparent bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text dark:from-cyan-400 dark:to-blue-400">Security done right.</span>
         </h1>
         <p class="mt-6 text-pretty text-base leading-7 text-slate-700 dark:text-slate-300 animate-[fade-up_0.6s_ease-out_0.15s_both]">
-          Mullaney Strategic Systems delivers precise, security-first managed services for small and medium business with a focus on financial & insurance practices that can’t afford to get cybersecurity wrong.
+          We deliver security-first managed services for financial and insurance organizations, focused on reducing risk, maintaining compliance, and ensuring accountability across identity, endpoints, cloud, and network environments.
         </p>
         <div class="mt-8 flex flex-wrap items-center gap-3 animate-[fade-up_0.6s_ease-out_0.25s_both]">
           <a href="#contact" class="inline-flex items-center gap-2 rounded-md bg-cyan-600 px-4 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-cyan-700/20 hover:bg-cyan-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500">
@@ -142,26 +142,26 @@
       <div class="relative">
         <div class="absolute inset-0 -z-10 bg-gradient-to-tr from-cyan-200/40 to-blue-200/20 blur-2xl dark:from-cyan-400/10 dark:to-blue-400/10"></div>
         <div class="mx-auto w-full max-w-md rounded-2xl border border-slate-200/70 bg-white/80 p-6 shadow-sm backdrop-blur ring-1 ring-black/0 animate-[fade-in_0.7s_ease-out_0.2s_both] dark:border-slate-700/60 dark:bg-slate-900/70">
-          <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-50">What we handle for you:</h2>
+          <h2 class="text-lg font-semibold text-slate-900 dark:text-slate-50">Operational Oversight</h2>
           <ul class="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-200">
             <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Identity & Privileged Access Management</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Google Workspace & Microsoft 365 Posture Management & Security</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Email Security, Authentication & Monitoring </li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Endpoint Security, Exposure Management, and Patching.</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Network Security, Administration, and Monitoring.</li>
-            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> 24/7 Managed Detection, Response, Remediation & Threat Hunting</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> SaaS & Cloud Workspace Security Posture</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Email Security, Authentication & DMARC Enforcement</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Endpoint Protection, Patching & Exposure Management</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> Network Governance, Administration & Monitoring</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span> 24/7 Managed Detection, Response & Threat Hunting</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Providers (moved above plans) -->
+  <!-- Workspace Support -->
   <section id="providers" class="border-t border-slate-200/60 bg-gradient-to-b from-white to-slate-50 py-16 dark:border-slate-700/40 dark:from-slate-950 dark:to-slate-900">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <header class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">We meet you where you are</h2>
-        <p class="mt-3 text-slate-600 dark:text-slate-300">We support today’s leading cloud workspace providers configured in both hybrid and cloud‑only environments.</p>
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Unified Cloud Governance</h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-300">We secure leading cloud workspace environments through native API integrations, ensuring consistent policy enforcement across cloud-only and hybrid infrastructures.</p>
       </header>
       <div class="mt-12 grid gap-8 lg:grid-cols-3 lg:items-stretch">
         <!-- Google Workspace -->
@@ -180,31 +180,25 @@
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Native, API-based integrations providing deep, continuous visibility across the workspace</span>
+                  <span>API-based integration for continuous visibility and automated threat remediation</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Purpose-built access models that avoid broad or persistent service accounts</span>
+                  <span>Granular access models designed to eliminate broad or persistent service accounts</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Service accounts used only when required for advanced remediation or delegated actions</span>
+                  <span>Strict alignment with least-privilege principles and platform-specific security constraints</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Permissions are tightly scoped and aligned to least-privilege principles</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                  <span>Designed to operate effectively within Google platform security constraints</span>
+                  <span>Centralized management of identity, email security, and data exposure risks</span>
                 </li>
               </ul>
             </div>
@@ -227,31 +221,25 @@
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Full API integration across identity, email, audit, and security telemetry</span>
+                  <span>Full-stack integration across identity, email, and security telemetry streams</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Near real-time visibility across the Microsoft cloud security ecosystem</span>
+                  <span>Real-time monitoring and enforcement of Entra ID Conditional Access policies</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Eliminates the need for always-on service accounts for standard monitoring</span>
+                  <span>Minimized credential exposure by leveraging native Microsoft Graph security APIs</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Service accounts introduced only for targeted remediation or optional full management</span>
-                </li>
-                <li class="flex items-start gap-3">
-                  <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                  <span>Maintains strong control while minimizing credential and privilege exposure</span>
+                  <span>Advanced posture management and drift detection for M365 security defaults</span>
                 </li>
               </ul>
             </div>
@@ -274,25 +262,25 @@
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Direct protection of identity infrastructure and supporting systems</span>
+                  <span>Direct oversight and protection of on-premises identity infrastructure</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Deep coverage for legacy servers and hybrid identity components</span>
+                  <span>Unified security controls bridging legacy servers with modern cloud directory services</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Seamless integration with cloud workspace APIs for unified visibility</span>
+                  <span>Continuous monitoring for lateral movement and identity-based attack patterns</span>
                 </li>
                 <li class="flex items-start gap-3">
                   <svg class="mt-1 h-4 w-4 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
-                  <span>Consistent security controls across on-prem and cloud environments</span>
+                  <span>Hardened configurations for domain controllers and supporting identity components</span>
                 </li>
               </ul>
             </div>
@@ -302,12 +290,12 @@
     </div>
   </section>
 
-  <!-- Service Plans (moved below providers) -->
+  <!-- Service Plans -->
   <section id="plans" class="bg-gradient-to-b from-slate-50 to-white py-16 dark:from-slate-900 dark:to-slate-950">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <header class="mx-auto max-w-2xl text-center">
         <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Service Plans</h2>
-        <p class="mt-3 text-slate-600 dark:text-slate-300">Choose the level of coverage that matches your operational maturity today, with a clear path to expand as security, insurance, and compliance expectations increase.</p>
+        <p class="mt-3 text-slate-600 dark:text-slate-300">Our tiered service model provides a clear path from fundamental risk reduction to comprehensive security oversight and audit readiness.</p>
       </header>
       <div class="mt-12 grid gap-8 lg:grid-cols-2 lg:items-stretch">
         <!-- Essentials -->
@@ -322,23 +310,23 @@
               </div>
             </div>
             <p class="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-              Essentials establishes strong security fundamentals across identity, endpoints, email, and cloud services. It is designed for organizations that want professional security management and risk reduction without managing infrastructure or compliance programs internally.
+              Essentials establishes a hardened security baseline across identity, endpoints, and cloud services. It is designed for organizations seeking professional security management and verified protection without internal infrastructure overhead.
             </p>
 
             <div class="mt-8 border-t border-slate-100 pt-8 dark:border-slate-800">
               <ul class="space-y-4 text-sm text-slate-700 dark:text-slate-200">
                 {#each [
-                  "Managed identity & access security",
-                  "Business-grade password management",
+                  "Managed identity & adaptive access security",
+                  "Enterprise-grade password management",
                   "Cloud workspace security & drift monitoring",
-                  "Secure email & SaaS protection",
-                  "Managed endpoints & patching",
-                  "Endpoint backup & SaaS data protection",
-                  "Continuous security monitoring",
-                  "Security awareness & phishing training",
-                  "Quarterly security reporting",
-                  "CIS/NIST-aligned configurations",
-                  "Business-hours support"
+                  "Advanced email & SaaS threat protection",
+                  "Automated endpoint patching & maintenance",
+                  "Immutable endpoint & SaaS data backups",
+                  "Continuous security event monitoring",
+                  "Security awareness & phishing simulations",
+                  "Quarterly security posture reporting",
+                  "CIS/NIST-aligned baseline configurations",
+                  "Standard business-hours technical support"
                 ] as item}
                   <li class="flex items-start gap-3">
                     <svg class="mt-0.5 h-5 w-5 flex-none text-cyan-600 dark:text-cyan-400" viewBox="0 0 20 20" fill="currentColor">
@@ -352,13 +340,13 @@
           </div>
 
           <div class="mt-8 rounded-2xl bg-slate-50 p-6 dark:bg-slate-800/50">
-            <p class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">Best for</p>
+            <p class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">Target Outcome</p>
             <p class="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
-              Organizations looking to reduce cyber risk and meet baseline expectations without the overhead of advanced compliance or managed network infrastructure.
+              Establishes essential technical controls to satisfy core cyber insurance requirements and significantly reduce the organization’s attack surface.
             </p>
             <div class="mt-6">
               <a href="#contact" class="flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-slate-800 focus:outline-none dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white">
-                Get started with Essentials
+                Inquire about Essentials
               </a>
             </div>
           </div>
@@ -367,7 +355,7 @@
         <!-- Complete -->
         <article class="relative flex flex-col rounded-3xl border-2 border-blue-600 bg-white p-8 shadow-xl transition-all duration-300 dark:bg-slate-900">
           <div class="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-bold uppercase tracking-widest text-white">
-            Most Popular
+            Recommended
           </div>
           
           <div class="flex-1">
@@ -381,22 +369,22 @@
               </div>
             </div>
             <p class="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-              Complete builds on Essentials with deeper monitoring, stronger controls, and formalized reporting. It requires managed network infrastructure to ensure full end-to-end security ownership and accountability.
+              Complete builds upon Essentials with deeper monitoring, active threat hunting, and managed network infrastructure. It is designed for organizations that require documented oversight and end-to-end accountability.
             </p>
 
             <div class="mt-8 border-t border-slate-100 pt-8 dark:border-slate-800">
               <p class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Everything in Essentials, plus:</p>
               <ul class="mt-4 space-y-4 text-sm text-slate-700 dark:text-slate-200">
                 {#each [
-                  "Advanced event monitoring & investigation",
-                  "Identity threat monitoring & Conditional Access",
-                  "Monthly phishing simulations & tracking",
+                  "24/7 Managed detection, response & remediation",
+                  "Human-led proactive threat hunting",
+                  "Identity threat detection & ITDR integration",
+                  "Managed network infrastructure & governance",
                   "Comprehensive monthly security reporting",
                   "Compliance-aligned reporting (NIST/CIS)",
                   "Cyber insurance renewal & audit support",
-                  "Managed network infrastructure & oversight",
-                  "Priority support & accelerated response",
-                  "Ongoing security hardening guidance"
+                  "Priority technical support & incident response",
+                  "Continuous security hardening & guidance"
                 ] as item}
                   <li class="flex items-start gap-3">
                     <svg class="mt-0.5 h-5 w-5 flex-none text-blue-600 dark:text-blue-400" viewBox="0 0 20 20" fill="currentColor">
@@ -410,13 +398,13 @@
           </div>
 
           <div class="mt-8 rounded-2xl bg-blue-50 p-6 dark:bg-blue-900/20">
-            <p class="text-xs font-medium uppercase tracking-wider text-blue-600 dark:text-blue-400">Best for</p>
+            <p class="text-xs font-medium uppercase tracking-wider text-blue-600 dark:text-blue-400">Target Outcome</p>
             <p class="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
-              Regulated or insured organizations that must demonstrate continuous oversight, support audits, and maintain documented controls across all surfaces.
+              Provides full-spectrum security oversight for regulated or high-risk organizations that must demonstrate continuous control and audit readiness.
             </p>
             <div class="mt-6">
               <a href="#contact" class="flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                Get started with Complete
+                Inquire about Complete
               </a>
             </div>
           </div>
@@ -439,8 +427,8 @@
           <!-- Left: content -->
           <div class="p-8 sm:p-10 lg:p-12">
             <header>
-              <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Let’s talk</h2>
-              <p class="mt-3 max-w-prose text-slate-600 dark:text-slate-300">Ready to tighten your security stack or move away from ad‑hoc IT support? We’ll review your environment and outline clear next steps.</p>
+              <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Consult an Expert</h2>
+              <p class="mt-3 max-w-prose text-slate-600 dark:text-slate-300">Ready to harden your security posture or transition away from consumer cybersecurity tools? We will evaluate your environment and provide a clear roadmap for remediation.</p>
             </header>
 
             <div class="mt-6 space-y-4 text-sm">
@@ -465,7 +453,7 @@
 
             <div class="mt-8">
               <a href="https://mullaneystrategicsystems.zoom.us/zbook/d/9libhoia/mullaney-strategic-systems-consultation" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-black/10 hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white">
-                Book a consultation
+                Schedule a Consultation
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </a>
             </div>
@@ -479,15 +467,15 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 in:fly={{ y: 20, duration: 400, delay: 200 }} class="text-xl font-semibold text-slate-900 dark:text-slate-50">Message sent!</h3>
-                <p in:fly={{ y: 20, duration: 400, delay: 300 }} class="text-slate-600 dark:text-slate-300">Thanks for reaching out. We'll get back to you soon.</p>
+                <h3 in:fly={{ y: 20, duration: 400, delay: 200 }} class="text-xl font-semibold text-slate-900 dark:text-slate-50">Submission Received</h3>
+                <p in:fly={{ y: 20, duration: 400, delay: 300 }} class="text-slate-600 dark:text-slate-300">Your inquiry has been received. We will respond within one business day.</p>
                 <button 
                   type="button"
                   onclick={handleResetForm}
                   in:fly={{ y: 20, duration: 400, delay: 400 }}
                   class="text-sm font-medium text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 transition-colors"
                 >
-                  Send another message
+                  Submit another inquiry
                 </button>
               </div>
             {/if}
@@ -503,8 +491,8 @@
                 use:enhance={handleEnhance}
                 aria-labelledby="contact-heading"
               >
-                <h3 id="contact-heading" class="text-xl font-semibold text-slate-900 dark:text-slate-50">Send a message</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-300">Fill out the form below and we'll be in touch.</p>
+                <h3 id="contact-heading" class="text-xl font-semibold text-slate-900 dark:text-slate-50">Secure Inquiry</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-300">Please provide your details below and an expert will be in touch.</p>
 
                 {#if formStatus?.success === false}
                   <div 
