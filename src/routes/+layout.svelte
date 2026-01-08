@@ -24,7 +24,7 @@
 
 	{@render children()}
 
-	<div class="mt-8 pb-8 flex justify-center">
+	<div class="mt-0 pb-8 flex justify-center">
 		<a
 			href="#opening"
 			class="gap-2 text-sm text-slate-600 hover:text-cyan-700 focus-visible:ring-cyan-500 dark:text-slate-300 dark:hover:text-cyan-300 inline-flex items-center focus:outline-none focus-visible:ring-2"

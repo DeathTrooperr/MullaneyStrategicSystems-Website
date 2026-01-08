@@ -6,10 +6,8 @@
 	const errorTitle = page.status === 404 ? common.errors.pageNotFound : common.errors.genericError;
 </script>
 
-<SEO title={errorTitle} />
-
 <div
-	class="px-6 py-24 sm:py-32 lg:px-8 relative isolate flex min-h-[calc(100vh-16rem)] flex-col items-center justify-center"
+		class="px-6 py-24 sm:py-32 lg:px-8 relative isolate flex h-screen flex-col items-center justify-center"
 >
 	<div class="inset-0 absolute -z-10 overflow-hidden">
 		<div

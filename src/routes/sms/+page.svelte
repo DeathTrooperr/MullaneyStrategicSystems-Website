@@ -1,13 +1,10 @@
 <script lang="ts">
-	import SEO from '$lib/components/layout/SEO.svelte';
 	import { sms } from '$lib/lang/en/pages/sms';
 	const lastUpdated = 'January 8, 2026'; // Using current date as last updated
 </script>
 
-<SEO title={sms.title} />
-
 <div class="max-w-4xl px-4 py-16 sm:px-6 lg:px-8 mx-auto">
-	<article class="prose prose-slate dark:prose-invert lg:prose-lg mx-auto">
+	<article class="mx-auto">
 		<h1
 			class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl text-center"
 		>
@@ -21,7 +18,7 @@
 			<p class="font-bold">{sms.lastUpdated.replace('{lastUpdated}', lastUpdated)}</p>
 		</div>
 
-		<div class="mt-8 space-y-12 text-slate-700 dark:text-slate-300">
+		<div class="mt-8 space-y-8 text-slate-700 dark:text-slate-300">
 			<section>
 				<h2
 					class="text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4 border-cyan-600 dark:border-cyan-400 pl-4 py-1 bg-slate-50 dark:bg-slate-800/50 rounded-r-lg border-l-4"

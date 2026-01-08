@@ -120,7 +120,7 @@
 </script>
 
 <!-- Contact -->
-<section id="contact" class="py-20">
+<section id="contact" class="pt-20 pb-10">
 	<div class="max-w-6xl px-4 sm:px-6 lg:px-8 mx-auto">
 		<div
 			class="rounded-3xl border-slate-200/70 bg-white shadow-sm ring-black/0 hover:shadow-md dark:border-slate-700/60 dark:bg-slate-900 relative overflow-hidden border ring-1 transition duration-300"
