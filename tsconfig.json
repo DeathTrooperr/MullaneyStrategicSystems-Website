@@ -11,8 +11,6 @@
 		"strict": true,
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext",
-		"types": [
-			"./src/worker-configuration.d.ts"
-		]
+		"types": ["./src/worker-configuration.d.ts"]
 	}
 }

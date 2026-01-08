@@ -51,8 +51,8 @@ The project requires several environment variables for Cloudflare Turnstile and 
 
 1.  Copy `.env.example` to `.env`.
 2.  Fill in the values in `.env`:
-    *   `PUBLIC_TURNSTILE_SITE_KEY`: Your Cloudflare Turnstile Site Key.
-    *   `TURNSTILE_SECRET_KEY`: Your Cloudflare Turnstile Secret Key.
+    - `PUBLIC_TURNSTILE_SITE_KEY`: Your Cloudflare Turnstile Site Key.
+    - `TURNSTILE_SECRET_KEY`: Your Cloudflare Turnstile Secret Key.
 
 ### Deployment on Cloudflare Pages
 

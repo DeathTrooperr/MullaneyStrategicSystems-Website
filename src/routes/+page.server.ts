@@ -13,16 +13,25 @@ export const actions = {
 		const message = data.get('message') as string;
 		const turnstileToken = data.get('cf-turnstile-response') as string;
 
-		console.log('Received form data:', { name, email, messageLength: message?.length, hasTurnstileToken: !!turnstileToken });
+		console.log('Received form data:', {
+			name,
+			email,
+			messageLength: message?.length,
+			hasTurnstileToken: !!turnstileToken
+		});
 
 		if (!name || !email || !message) {
 			console.warn('Missing required fields');
-			return fail(400, { message: 'All fields are required. Please ensure name, email, and message are filled out.' });
+			return fail(400, {
+				message: 'All fields are required. Please ensure name, email, and message are filled out.'
+			});
 		}
 
 		if (!turnstileToken) {
 			console.warn('Missing turnstile token');
-			return fail(400, { message: 'Please complete the security verification to send your message.' });
+			return fail(400, {
+				message: 'Please complete the security verification to send your message.'
+			});
 		}
 
 		// Validate Turnstile
@@ -48,11 +57,13 @@ export const actions = {
 			return fail(500, { message: 'Security service is temporarily unavailable.' });
 		}
 
-		const outcome = await result.json() as { success: boolean };
+		const outcome = (await result.json()) as { success: boolean };
 		console.log('Turnstile validation result:', outcome);
 		if (!outcome.success) {
 			console.warn('Turnstile validation failed');
-			return fail(400, { message: 'Security verification failed. Please refresh the page and try again.' });
+			return fail(400, {
+				message: 'Security verification failed. Please refresh the page and try again.'
+			});
 		}
 
 		if (!platform?.env.SEND_EMAIL) {
@@ -63,7 +74,10 @@ export const actions = {
 		try {
 			console.log('Preparing email message');
 			const msg = createMimeMessage();
-			msg.setSender({ name: 'Website Contact Form', addr: 'noreply@cloudflare.mullaneystrategicsystems.com' });
+			msg.setSender({
+				name: 'Website Contact Form',
+				addr: 'noreply@cloudflare.mullaneystrategicsystems.com'
+			});
 			msg.setRecipient('samuel@mullaneystrategicsystems.com');
 			msg.setSubject(`Contact Form Submission from ${name}`);
 			msg.addMessage({
@@ -84,7 +98,10 @@ export const actions = {
 			return { success: true };
 		} catch (e) {
 			console.error('Error during email preparation or sending:', e);
-			return fail(500, { message: 'We were unable to send your message at this time. Please try again later or contact us directly at samuel@mullaneystrategicsystems.com.' });
+			return fail(500, {
+				message:
+					'We were unable to send your message at this time. Please try again later or contact us directly at samuel@mullaneystrategicsystems.com.'
+			});
 		}
 	}
 } satisfies Actions;
