@@ -72,10 +72,10 @@
 					<p
 						class="text-xs font-medium tracking-wider text-slate-500 dark:text-slate-400 uppercase"
 					>
-						{home.sections.servicePlans.plans.essentials.targetOutcome.label}
+						{home.sections.servicePlans.plans.essentials.builtFor.label}
 					</p>
 					<p class="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
-						{home.sections.servicePlans.plans.essentials.targetOutcome.text}
+						{home.sections.servicePlans.plans.essentials.builtFor.text}
 					</p>
 					<div class="mt-6">
 						<a
@@ -152,10 +152,10 @@
 
 				<div class="mt-8 rounded-2xl bg-blue-50 p-6 dark:bg-blue-900/20">
 					<p class="text-xs font-medium tracking-wider text-blue-600 dark:text-blue-400 uppercase">
-						{home.sections.servicePlans.plans.complete.targetOutcome.label}
+						{home.sections.servicePlans.plans.complete.builtFor.label}
 					</p>
 					<p class="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
-						{home.sections.servicePlans.plans.complete.targetOutcome.text}
+						{home.sections.servicePlans.plans.complete.builtFor.text}
 					</p>
 					<div class="mt-6">
 						<a

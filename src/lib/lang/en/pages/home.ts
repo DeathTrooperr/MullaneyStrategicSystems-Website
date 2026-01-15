@@ -5,14 +5,14 @@ export const home = {
 		titleAccent: 'Security done right.',
 		subtitle: common.companyDescription,
 		oversight: {
-			title: 'Operational Oversight',
+			title: 'Managed Security Capabilities',
 			items: [
-				'Identity & Privileged Access Management',
-				'Cloud Workspace & SaaS Security & Posture Enforcement',
-				'Email Security, Authentication & Monitoring',
-				'Endpoint Protection, Patching & Exposure Management',
-				'Network Governance, Administration & Monitoring',
-				'24/7 Managed Detection, Response & Threat Hunting'
+				'Managed Endpoint Detection and Response (EDR)',
+				'Managed Identity Threat Detection and Response (ITDR)',
+				'Managed Network Detection and Response (NDR)',
+				'Managed Extended Detection and Response (XDR)',
+				'24/7 human-led threat hunting',
+				'Unified logging, reporting, training, and security operations'
 			]
 		}
 	},
@@ -25,28 +25,28 @@ export const home = {
 				google: {
 					title: 'Google Workspace',
 					features: [
-						'Native API integration for continuous visibility and targeted threat remediation',
-						'Granular access models that eliminate broad or persistent service accounts',
-						'Permissions strictly aligned to least-privilege and Google security constraints',
-						'Centralized oversight of identity, email security, and data exposure risk'
+						'Native Google Workspace API integrations for identity, email, and activity visibility',
+						'Enhanced email security and data loss prevention layered on top of Gmail and Drive',
+						'Identity Threat Detection and Response (ITDR) for user, session, and privilege abuse',
+						'Centralized single sign-on, enforced MFA, and identity access controls'
 					]
 				},
 				microsoft: {
 					title: 'Microsoft 365',
 					features: [
-						'Full-spectrum integration across identity, email, and security telemetry',
-						'Real-time monitoring and enforcement of Entra ID Conditional Access policies',
-						'Reduced credential exposure through native Microsoft Graph security APIs',
-						'Ongoing posture management and drift detection for M365 security controls'
+						'Native Microsoft Graph API integrations for identity, email, and security telemetry',
+						'Enhanced email security and data loss prevention beyond baseline M365 controls',
+						'Identity Threat Detection and Response (ITDR) across Entra ID and user sessions',
+						'Centralized single sign-on, enforced MFA, and identity access controls'
 					]
 				},
 				hybrid: {
-					title: 'Hybrid AD',
+					title: 'Hybrid Active Directory',
 					features: [
-						'Direct oversight and protection of on-premises identity infrastructure',
-						'Unified controls bridging legacy servers with modern cloud identity services',
-						'Continuous monitoring for lateral movement and identity-based attacks',
-						'Hardened configurations for domain controllers and critical identity systems'
+						'Secure endpoint and directory-based agents for on-prem and hybrid identity visibility',
+						'Enhanced email security and data loss prevention across connected cloud platforms',
+						'Identity Threat Detection and Response (ITDR) bridging legacy and cloud identities',
+						'Unified single sign-on, enforced MFA, and centralized identity control'
 					]
 				}
 			}
@@ -59,45 +59,43 @@ export const home = {
 				essentials: {
 					title: 'Essentials',
 					description:
-						'Essentials establishes a hardened security baseline across identity, endpoints, and cloud services. It is designed for organizations that require verified protection and professional security management without internal infrastructure or security operations overhead.',
+						'Essentials provides a security-first operational baseline across identity, cloud, email, endpoints, and network access. It is designed to continuously reduce risk through automated controls, active monitoring, and managed detection without the overhead of building an internal security team.',
 					items: [
-						'Managed identity & adaptive access security',
-						'Enterprise-grade password management',
-						'Cloud workspace security & drift monitoring',
-						'Advanced email & SaaS threat protection',
-						'Automated endpoint patching & maintenance',
-						'Immutable endpoint & SaaS data backups',
-						'Continuous security event monitoring',
-						'Security awareness & phishing simulations',
-						'Quarterly security posture reporting',
-						'CIS/NIST-aligned baseline configurations',
-						'Standard business-hours technical support'
+						'Centralized identity and access management',
+						'Enterprise password management with credential compromise monitoring',
+						'Multi-factor authentication and secure single sign-on',
+						'Email security, authentication, and domain monitoring',
+						'Cloud workspace and SaaS security baseline enforcement',
+						'Ongoing security awareness training with quarterly phishing simulations',
+						'Endpoint protection, patching, vulnerability management, and baselining',
+						'Centralized endpoint and cloud workspace backups',
+						'Zero Trust network access and cloud-delivered firewall enforcement',
+						'Endpoint, cloud, SaaS, and identity threat detection and response',
+						'24/7 managed detection and threat hunting'
 					],
-					targetOutcome: {
-						label: 'Target Outcome',
-						text: 'Establishes essential controls to support core cyber insurance expectations and materially reduce organizational attack surface.'
+					builtFor: {
+						label: 'Built for Small and Growing Organizations',
+						text: 'Ideal for small businesses and professional organizations that need strong, insurer-aligned security controls, continuous monitoring, and meaningful risk reduction without the cost or complexity of a full internal security program.'
 					}
 				},
 				complete: {
 					title: 'Complete',
 					recommended: 'Recommended',
 					description:
-						'Complete builds upon Essentials with continuous monitoring, proactive threat hunting, and managed network infrastructure. It is designed for organizations that require documented oversight, formal accountability, and audit-ready security operations.',
+						'Complete expands on Essentials by adding deeper visibility, cross-domain correlation, and human-led security operations. It is designed for organizations that require formal governance, continuous validation of controls, and security operations that stand up to audits and regulatory scrutiny.\'',
 					plusLabel: 'Everything in Essentials, plus:',
 					items: [
-						'24/7 managed detection, response & remediation',
-						'Human-led proactive threat hunting',
-						'Identity threat detection & ITDR integration',
-						'Managed network infrastructure & governance',
-						'Comprehensive monthly security reporting',
-						'Compliance-aligned reporting (NIST/CIS)',
-						'Cyber insurance renewal & audit support',
-						'Priority technical support & accelerated response',
-						'Continuous security hardening & advisory guidance'
+						'Network detection and response',
+						'Network management, monitoring, and operational support',
+						'Centralized security logging with cross-domain event correlation',
+						'Data loss prevention across endpoints, email, network, and cloud',
+						'Monthly phishing simulations with employee risk profiling',
+						'Enhanced monthly security reviews and control validation',
+						'Managed compliance reporting across endpoint, cloud, SaaS, identity, and network layers'
 					],
-					targetOutcome: {
-						label: 'Target Outcome',
-						text: 'Provides full-spectrum oversight for regulated or high-risk organizations that must demonstrate continuous control, resilience, and audit readiness.'
+					builtFor: {
+						label: 'Built for Regulated Industries',
+						text: 'Designed for financial, insurance, healthcare, and other regulated or high-risk organizations that require layered security operations, expanded telemetry, documented oversight, and audit-ready evidence across their environment.'
 					}
 				}
 			}
@@ -105,9 +103,9 @@ export const home = {
 		contact: {
 			title: 'Consult an Expert',
 			subtitle:
-				'Ready to harden your security posture or transition away from ad-hoc IT support? We’ll evaluate your environment and provide a clear, prioritized roadmap for remediation.',
+				'Ready to improve your security posture or transition away from inconsistent cybersecurity practices? We’ll evaluate your environment and provide a clear, prioritized roadmap for locking down your environment.',
 			form: {
-				title: 'Secure Inquiry',
+				title: 'Direct Inquiry',
 				subtitle: 'Share a brief overview of your environment and security goals. An expert will follow up promptly.',
 				successTitle: 'Submission Received',
 				successMessage: 'Your inquiry has been received. We typically respond within one business day.',
