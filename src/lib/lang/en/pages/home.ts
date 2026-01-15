@@ -27,7 +27,7 @@ export const home = {
 					features: [
 						'Native Google Workspace API integrations for identity, email, and activity visibility',
 						'Enhanced email security and data loss prevention layered on top of Gmail and Drive',
-						'Identity Threat Detection and Response (ITDR) for user, session, and privilege abuse',
+						'Identity Threat Detection and Response (ITDR) for workspace users and Google Products',
 						'Centralized single sign-on, enforced MFA, and identity access controls'
 					]
 				},
@@ -36,7 +36,7 @@ export const home = {
 					features: [
 						'Native Microsoft Graph API integrations for identity, email, and security telemetry',
 						'Enhanced email security and data loss prevention beyond baseline M365 controls',
-						'Identity Threat Detection and Response (ITDR) across Entra ID and user sessions',
+						'Identity Threat Detection and Response (ITDR) across Entra ID and Office Products',
 						'Centralized single sign-on, enforced MFA, and identity access controls'
 					]
 				},
@@ -99,6 +99,39 @@ export const home = {
 					}
 				}
 			}
+		},
+		addOns: {
+			title: 'Add-ons and Single Engagements',
+			subtitle: 'Complement your service plan with targeted engagements or specialized management services.',
+			items: [
+				{
+					title: 'Email Archiving',
+					description: 'Secure, long-term retention of all business communications to satisfy legal discovery and compliance requirements.',
+					requirement: 'requires Essentials Plan',
+					buttonText: common.buttons.inquireAboutEssentials
+				},
+				{
+					title: 'Domain Management',
+					description: 'Full lifecycle management of your corporate domains, including DNS security, SSL/TLS certificates, and brand protection.',
+					requirement: 'requires Essentials Plan',
+					buttonText: common.buttons.inquireAboutEssentials
+				},
+				{
+					title: 'Networking Engagement',
+					description: 'Expert assessment and optimization of your network infrastructure to improve performance, reliability, and security.',
+					buttonText: 'Inquire about Networking'
+				},
+				{
+					title: 'WISP Engagement',
+					description: 'Development and documentation of a formal Written Information Security Program (WISP) tailored to your regulatory needs.',
+					buttonText: 'Inquire about a WISP'
+				},
+				{
+					title: 'Ad-Hoc IT or Cyber Engagement',
+					description: 'Specialized technical support or cybersecurity consulting for unique projects, incident response, or forensic analysis.',
+					buttonText: 'Inquire about Support'
+				}
+			]
 		},
 		contact: {
 			title: 'Consult an Expert',

@@ -168,5 +168,66 @@
 				</div>
 			</article>
 		</div>
+
+		<!-- Add-ons and Single Engagements -->
+		<div class="mt-16 pt-16">
+			<header class="max-w-2xl mx-auto text-center mb-12">
+				<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+					{home.sections.addOns.title}
+				</h2>
+				<p class="mt-3 text-slate-600 dark:text-slate-300">
+					{home.sections.addOns.subtitle}
+				</p>
+			</header>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{#each home.sections.addOns.items as item}
+					<article
+						class="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm hover:shadow-md dark:border-slate-700/50 dark:bg-slate-900/50 flex flex-col transition-all duration-300"
+					>
+						<div class="flex-1">
+							<div class="flex items-center justify-between mb-4">
+								<h3 class="text-lg font-bold text-slate-900 dark:text-slate-50 leading-tight">
+									{item.title}
+								</h3>
+								<div class="bg-indigo-50 p-1.5 dark:bg-indigo-900/30 rounded-lg flex-none ml-4">
+									<svg
+										class="h-5 w-5 text-indigo-600 dark:text-indigo-400"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										aria-hidden="true"
+									>
+										<path
+											d="M12 4v16m8-8H4"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
+								</div>
+							</div>
+							<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+								{item.description}
+							</p>
+							{#if item.requirement}
+								<p class="mt-2 text-xs text-indigo-600 dark:text-indigo-400 font-medium italic">
+									({item.requirement})
+								</p>
+							{/if}
+						</div>
+
+						<div class="mt-6">
+							<a
+								href="#contact"
+								class="rounded-xl bg-slate-50 px-4 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 flex w-full items-center justify-center transition-all focus:outline-none"
+							>
+								{item.buttonText}
+							</a>
+						</div>
+					</article>
+				{/each}
+			</div>
+		</div>
 	</div>
 </section>

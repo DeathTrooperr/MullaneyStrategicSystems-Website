@@ -20,6 +20,7 @@ export const common = {
 		submitAnotherInquiry: 'Submit another inquiry',
 		inquireAboutEssentials: 'Inquire about Essentials',
 		inquireAboutComplete: 'Inquire about Complete',
+		inquireAboutAddOns: 'Inquire about Add-ons',
 		backToHome: 'Back to home',
 		emailSupport: 'Email support'
 	},

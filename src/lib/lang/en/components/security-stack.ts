@@ -66,8 +66,8 @@ export const securityStack = {
 		},
 		{
 			title: 'Cloud Workspace Backups',
-			vendor: 'NinjaOne',
-			desc: 'NinjaOne provides automated, immutable backups for Microsoft 365 and Google Workspace to protect against data loss and ransomware. It ensures that email, SharePoint, OneDrive, and Google Drive data are securely archived and independently recoverable. This guarantees business continuity and meets regulatory requirements for data retention and availability.',
+			vendor: 'NinjaOne (DropSuit)',
+			desc: 'NinjaOne via DropSuit provides automated, immutable backups for Microsoft 365 and Google Workspace to protect against data loss and ransomware. It ensures that email, SharePoint, OneDrive, and Google Drive data are securely archived and independently recoverable. This guarantees business continuity and meets regulatory requirements for data retention and availability.',
 			tags: ['Cloud'],
 			color: 'teal'
 		},
@@ -100,9 +100,9 @@ export const securityStack = {
 			color: 'orange'
 		},
 		{
-			title: 'Exposure Management',
-			vendor: 'CrowdStrike',
-			desc: 'CrowdStrike Falcon Exposure Management provides continuous visibility into all assets, vulnerabilities, and potential attack paths. It prioritizes remediation efforts based on real-world adversary behavior and the criticality of the affected systems. This enables a risk-based approach to patching and configuration hardening that significantly reduces the organization’s attack surface.',
+			title: 'Vulnerability Management',
+			vendor: 'Coda Intelligence',
+			desc: 'Coda Intelligence provides continuous vulnerability management and contextual risk scoring across all assets, correlating vulnerabilities, misconfigurations, and asset criticality to identify the most impactful risk areas. It prioritizes real-world exposures and supports remediation decision-making so your team can focus on what matters most.',
 			tags: ['Endpoint'],
 			color: 'lime'
 		},
@@ -122,8 +122,8 @@ export const securityStack = {
 		},
 		{
 			title: 'Patching',
-			vendor: 'CrowdStrike & NinjaOne',
-			desc: 'This combined solution automates the distribution and verification of operating system and third-party application patches. It leverages NinjaOne’s orchestration capabilities with CrowdStrike’s vulnerability intelligence to prioritize and deploy critical security updates. This ensures that known vulnerabilities are remediated quickly to prevent exploitation.',
+			vendor: 'NinjaOne',
+			desc: 'NinjaOne delivers automated operating system and third-party application patching across managed endpoints, while prioritization is driven by vulnerability insights from Coda Intelligence to focus remediation on the most impactful exposures. This approach shortens the time to remediate known vulnerabilities on managed assets and limits the window for active exploitation.',
 			tags: ['Endpoint'],
 			color: 'emerald'
 		},
