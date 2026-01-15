@@ -170,7 +170,7 @@
 		</div>
 
 		<!-- Add-ons and Single Engagements -->
-		<div class="mt-16 pt-16">
+		<div class="mt-20 pt-16">
 			<header class="max-w-2xl mx-auto text-center mb-12">
 				<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
 					{home.sections.addOns.title}
@@ -211,9 +211,13 @@
 								{item.description}
 							</p>
 							{#if item.requirement}
-								<p class="mt-2 text-xs text-indigo-600 dark:text-indigo-400 font-medium italic">
-									({item.requirement})
-								</p>
+								<div class="mt-3">
+									<span
+										class="inline-flex items-center rounded-full bg-indigo-50 px-2 py-0.5 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10 dark:bg-indigo-900/30 dark:text-indigo-400 dark:ring-indigo-400/20"
+									>
+										{item.requirement}
+									</span>
+								</div>
 							{/if}
 						</div>
 

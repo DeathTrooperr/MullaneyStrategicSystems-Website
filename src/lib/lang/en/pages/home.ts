@@ -127,10 +127,10 @@ export const home = {
 					buttonText: 'Inquire about a WISP'
 				},
 				{
-					title: 'Ad-Hoc IT or Cyber Engagement',
+					title: 'Professional Services Engagement',
 					description: 'Specialized technical support or cybersecurity consulting for unique projects, incident response, or forensic analysis.',
-					buttonText: 'Inquire about Support'
-				}
+					buttonText: 'Inquire about Services'
+				},
 			]
 		},
 		contact: {

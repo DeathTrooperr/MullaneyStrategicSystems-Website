@@ -12,6 +12,7 @@ export const actions = {
 		const email = data.get('email') as string;
 		const message = data.get('message') as string;
 		const turnstileToken = data.get('cf-turnstile-response') as string;
+		const toEmailAddress = "srmullaney@gmail.com";
 
 		console.log('Received form data:', {
 			name,
@@ -78,7 +79,7 @@ export const actions = {
 				name: 'Website Contact Form',
 				addr: 'noreply@cloudflare.mullaneystrategicsystems.com'
 			});
-			msg.setRecipient('samuel@mullaneystrategicsystems.com');
+			msg.setRecipient(toEmailAddress);
 			msg.setSubject(`Contact Form Submission from ${name}`);
 			msg.addMessage({
 				contentType: 'text/plain',
@@ -88,7 +89,7 @@ export const actions = {
 			console.log('Sending email via platform binding');
 			const emailMessage = new EmailMessage(
 				'noreply@cloudflare.mullaneystrategicsystems.com',
-				'samuel@mullaneystrategicsystems.com',
+				toEmailAddress,
 				msg.asRaw()
 			);
 
